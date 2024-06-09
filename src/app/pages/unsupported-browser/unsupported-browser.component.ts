@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './unsupported-browser.component.html',
-  styleUrl: './unsupported-browser.component.scss'
+  styleUrl: './unsupported-browser.component.scss',
 })
-export class UnsupportedBrowserComponent {
-
-}
+export default class UnsupportedBrowserComponent {}
