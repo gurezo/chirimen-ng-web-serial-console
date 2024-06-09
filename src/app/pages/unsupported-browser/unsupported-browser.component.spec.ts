@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UnsupportedBrowserComponent } from './unsupported-browser.component';
+import UnsupportedBrowserComponent from './unsupported-browser.component';
 
 describe('UnsupportedBrowserComponent', () => {
   let component: UnsupportedBrowserComponent;
@@ -8,10 +8,9 @@ describe('UnsupportedBrowserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UnsupportedBrowserComponent]
-    })
-    .compileComponents();
-    
+      imports: [UnsupportedBrowserComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(UnsupportedBrowserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
