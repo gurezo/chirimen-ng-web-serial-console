@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
+import { EditorContainersComponent } from '../../containers';
 
 @Component({
   selector: 'app-editor',
   standalone: true,
-  imports: [],
-  templateUrl: './editor.component.html',
-  styleUrl: './editor.component.scss',
+  imports: [EditorContainersComponent],
+  template: `<app-editor-containers />`,
 })
 export default class EditorComponent {}
