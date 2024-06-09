@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './pin-assign.component.html',
-  styleUrl: './pin-assign.component.scss'
+  styleUrl: './pin-assign.component.scss',
 })
-export class PinAssignComponent {
-
-}
+export default class PinAssignComponent {}

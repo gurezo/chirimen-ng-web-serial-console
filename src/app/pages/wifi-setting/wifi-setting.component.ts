@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './wifi-setting.component.html',
-  styleUrl: './wifi-setting.component.scss'
+  styleUrl: './wifi-setting.component.scss',
 })
-export class WifiSettingComponent {
-
-}
+export default class WifiSettingComponent {}
