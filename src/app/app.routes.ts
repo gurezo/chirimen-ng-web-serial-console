@@ -5,12 +5,13 @@ import { browserCheckGuard } from './guards/browser-check.guard';
 export const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     component: AppComponent,
     canActivate: [browserCheckGuard],
   },
   {
     path: 'unsupported-browser',
-    loadChildren: () =>
+    loadComponent: () =>
       import('./pages/unsupported-browser/unsupported-browser.component'),
   },
 ];
