@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
+import { PinAssignContainersComponent } from '../../containers';
 
 @Component({
   selector: 'app-pin-assign',
   standalone: true,
-  imports: [],
-  templateUrl: './pin-assign.component.html',
-  styleUrl: './pin-assign.component.scss',
+  imports: [PinAssignContainersComponent],
+  template: `<app-pin-assign-containers />`,
 })
 export default class PinAssignComponent {}
