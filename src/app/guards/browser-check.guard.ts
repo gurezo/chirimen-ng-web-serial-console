@@ -11,12 +11,15 @@ export const browserCheckGuard: CanActivateFn = () => {
   const isEdge = /edg/.test(userAgent);
   const isOpera = /opr/.test(userAgent);
 
-  if (isChrome || isEdge || isOpera) {
-    // デスクトップ版の Chrome, Edge, Opera の場合はページ遷移を許可
-    return true;
-  } else {
-    // それ以外のブラウザの場合は、サポート外ページへ遷移
-    router.navigate(['/unsupported-browser']);
-    return false;
-  }
+  // 開発中は、ブラウザチェックをスキップ
+  return true;
+
+  // if (isChrome || isEdge || isOpera) {
+  //   // デスクトップ版の Chrome, Edge, Opera の場合はページ遷移を許可
+  //   return true;
+  // } else {
+  //   // それ以外のブラウザの場合は、サポート外ページへ遷移
+  //   router.navigate(['/unsupported-browser']);
+  //   return false;
+  // }
 };
