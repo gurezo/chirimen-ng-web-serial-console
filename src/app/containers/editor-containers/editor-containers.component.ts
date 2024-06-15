@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { MonacoEditorService } from '../../services/monaco-editor.service';
+import { MonacoEditorService } from '@app/services';
 
 @Component({
   selector: 'app-editor-containers',
