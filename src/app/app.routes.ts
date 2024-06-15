@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { browserCheckGuard } from './guards/browser-check.guard';
+import { browserCheckGuard } from './guards';
 
 export const routes: Routes = [
   {
