@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { browserCheckGuard } from './guards';
+import { TopComponent } from './pages/top/top.component';
 
 export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: AppComponent,
+    component: TopComponent,
     canActivate: [browserCheckGuard],
   },
   {
@@ -25,14 +25,14 @@ export const routes: Routes = [
     canActivate: [browserCheckGuard],
   },
   {
-    path: 'unsupported-browser',
-    loadComponent: () =>
-      import('./pages/unsupported-browser/unsupported-browser.component'),
-  },
-  {
     path: 'wifi-setting',
     loadComponent: () => import('./pages/wifi-setting/wifi-setting.component'),
     canActivate: [browserCheckGuard],
+  },
+  {
+    path: 'unsupported-browser',
+    loadComponent: () =>
+      import('./pages/unsupported-browser/unsupported-browser.component'),
   },
   {
     path: '**',
