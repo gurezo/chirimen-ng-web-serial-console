@@ -15,5 +15,10 @@
   </div>
   <div>
     <!-- エディター -->
+    <ngx-monaco-editor
+      class="my-code-editor"
+      [options]="editorOptions"
+      [(ngModel)]="code"
+    ></ngx-monaco-editor>
   </div>
 </div>
