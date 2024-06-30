@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConsoleComponent } from './console.component';
+import ConsoleComponent from './console.component';
 
 describe('ConsoleComponent', () => {
   let component: ConsoleComponent;
@@ -8,10 +8,9 @@ describe('ConsoleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ConsoleComponent]
-    })
-    .compileComponents();
-    
+      imports: [ConsoleComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ConsoleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
