@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { monacoConfig } from '@app/constants';
+import { MonacoEditorModule, provideMonacoEditor } from 'ngx-monaco-editor-v2';
 import { EditorContainersComponent } from './editor-containers.component';
 
 describe('EditorContainersComponent', () => {
@@ -8,9 +9,9 @@ describe('EditorContainersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EditorContainersComponent]
-    })
-    .compileComponents();
+      imports: [EditorContainersComponent, MonacoEditorModule],
+      providers: [provideMonacoEditor(monacoConfig)],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(EditorContainersComponent);
     component = fixture.componentInstance;
