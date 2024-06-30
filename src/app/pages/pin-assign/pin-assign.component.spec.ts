@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PinAssignComponent } from './pin-assign.component';
+import PinAssignComponent from './pin-assign.component';
 
 describe('PinAssignComponent', () => {
   let component: PinAssignComponent;
@@ -8,10 +8,9 @@ describe('PinAssignComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PinAssignComponent]
-    })
-    .compileComponents();
-    
+      imports: [PinAssignComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(PinAssignComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
