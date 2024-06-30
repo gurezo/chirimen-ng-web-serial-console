@@ -15,4 +15,5 @@ export class MonacoEditorService {
   // TODO: ファイルの新規作成
   // TODO: ファイルの削除
   // TODO: ファイルのリネーム
+  // TODO: ファイルパスのパンくず
 }
