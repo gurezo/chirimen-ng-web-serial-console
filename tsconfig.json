@@ -21,9 +21,7 @@
     "lib": ["ES2022", "dom"],
     "baseUrl": "src",
     "paths": {
-      "@app/*": [
-        "app/*"
-      ],
+      "@app/*": ["app/*"],
     }
   },
   "angularCompilerOptions": {
