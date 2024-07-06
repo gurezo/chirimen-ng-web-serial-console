@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
-import { MonacoEditorService } from '../../services';
+import { MonacoEditorService } from './services';
 
 @Component({
   selector: 'app-editor-containers',
