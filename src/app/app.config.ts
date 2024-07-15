@@ -5,6 +5,7 @@ import { provideMonacoEditor } from 'ngx-monaco-editor-v2';
 import { routes } from './app.routes';
 import { monacoConfig } from './constants';
 import { provideStore } from '@ngrx/store';
+import { provideRouterStore } from '@ngrx/router-store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,6 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimationsAsync(),
     provideMonacoEditor(monacoConfig),
-    provideStore()
+    provideStore(),
+    provideRouterStore()
 ],
 };
