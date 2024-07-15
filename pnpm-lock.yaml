@@ -38,6 +38,9 @@ importers:
       '@angular/router':
         specifier: ^18.1.0
         version: 18.1.0(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(@angular/platform-browser@18.1.0(@angular/animations@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7)))(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7)))(rxjs@7.8.1)
+      '@ngrx/router-store':
+        specifier: ^18.0.1
+        version: 18.0.1(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(@angular/router@18.1.0(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(@angular/platform-browser@18.1.0(@angular/animations@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7)))(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7)))(rxjs@7.8.1))(@ngrx/store@18.0.1(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1)
       '@ngrx/store':
         specifier: ^18.0.1
         version: 18.0.1(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)
@@ -1622,6 +1625,15 @@ packages:
     resolution: {integrity: sha512-O+6Gs8UeDbyFpbSh2CPEz/UOrrdWPTBYNblZK5CxxLisYt4kGX3Sc+czffFonyjiGSq3jWLwJS/CCJc7tBr4sQ==}
     cpu: [x64]
     os: [win32]
+
+  '@ngrx/router-store@18.0.1':
+    resolution: {integrity: sha512-OrgM6DkYOES7S/NQilxbTk5xtfZTrD3hlM2CsB4TBbV6zvOW0F8HpazcXffFXi9T9y34W1Y4pMzpKHoMTIHF/g==}
+    peerDependencies:
+      '@angular/common': ^18.0.0
+      '@angular/core': ^18.0.0
+      '@angular/router': ^18.0.0
+      '@ngrx/store': 18.0.1
+      rxjs: ^6.5.3 || ^7.5.0
 
   '@ngrx/store@18.0.1':
     resolution: {integrity: sha512-TxZiQz06fGSxQ0clYfzkH4NCr6tfa8A7zqzkvvOOK1ZezOHHsk0vZJJtgxQcKUqAQxPpbp5+Z7YR8P/Fuid7GQ==}
@@ -7542,6 +7554,15 @@ snapshots:
 
   '@msgpackr-extract/msgpackr-extract-win32-x64@3.0.2':
     optional: true
+
+  '@ngrx/router-store@18.0.1(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(@angular/router@18.1.0(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(@angular/platform-browser@18.1.0(@angular/animations@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7)))(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7)))(rxjs@7.8.1))(@ngrx/store@18.0.1(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(rxjs@7.8.1)':
+    dependencies:
+      '@angular/common': 18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)
+      '@angular/core': 18.1.0(rxjs@7.8.1)(zone.js@0.14.7)
+      '@angular/router': 18.1.0(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(@angular/platform-browser@18.1.0(@angular/animations@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7)))(@angular/common@18.1.0(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1))(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7)))(rxjs@7.8.1)
+      '@ngrx/store': 18.0.1(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.6.3
 
   '@ngrx/store@18.0.1(@angular/core@18.1.0(rxjs@7.8.1)(zone.js@0.14.7))(rxjs@7.8.1)':
     dependencies:
