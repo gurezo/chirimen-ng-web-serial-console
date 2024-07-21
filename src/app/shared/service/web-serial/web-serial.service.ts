@@ -1,4 +1,10 @@
 import { Injectable } from '@angular/core';
+import { SerialPort } from 'web-serial-polyfill';
+// TODOL: インポート文の実装を再検討
+// import {
+//   serial as polyfill,
+//   SerialPort as SerialPortPolyfill,
+// } from 'web-serial-polyfill';
 
 @Injectable({
   providedIn: 'root',
@@ -6,29 +12,53 @@ import { Injectable } from '@angular/core';
 export class WebSerialService {
   // TODO: シリアルポートの状態管理をどうするか
   // NgRx のルートストアに登録するか、サービス内で管理するか
+  serialPort: SerialPort | undefined;
+  navSerialPort: any;
 
-  port: SerialPort;
-
-  constructor() {
-    this.port = new SerialPort();
-  }
-
+  // async requestPort(): Promise<void> {
+  //   try {
+  //     const port = await navigator.serial.requestPort();
+  //     const connect = await port.open({ baudRate: 115200 });
+  //     console.log('port OK', connect);
+  //   } catch (error) {
+  //     console.log('error is', error);
+  //     // console.error(error);
+  //   }
+  // }
   async requestPort(): Promise<void> {
     try {
-      const port = await navigator.serial.requestPort();
-      await port.open({ baudRate: 115200 });
+      this.navSerialPort = await navigator.serial.requestPort();
+    } catch (error) {
+      // 未選択時の仕様をどうするか？
+    }
+  }
+
+  // TODO: 一応仮実装、使い道あるかどうか？
+  async getPorts(): Promise<void> {
+    try {
+      const ports = await navigator.serial.getPorts();
+      console.log('port info: ', ports);
     } catch (error) {}
+  }
+
+  connectPort() {
+    this.navSerialPort.open({ baudRate: 115200 });
   }
 
   async closePort() {
     try {
-      await this.port.close();
+      this.serialPort?.close();
     } catch (error) {}
   }
 
   /**
    *
    *
+   *
+   *
+  memo
+  PiZeroWebSerialConsole code
+
   onconnect: ((this: this, ev: Event) => any) | null;
   ondisconnect: ((this: this, ev: Event) => any) | null;
 
