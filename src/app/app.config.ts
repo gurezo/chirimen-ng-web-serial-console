@@ -6,6 +6,7 @@ import { routes } from './app.routes';
 import { monacoConfig } from './constants';
 import { provideStore } from '@ngrx/store';
 import { provideRouterStore } from '@ngrx/router-store';
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,6 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideMonacoEditor(monacoConfig),
     provideStore(),
-    provideRouterStore()
+    provideRouterStore(),
+    provideEffects()
 ],
 };
