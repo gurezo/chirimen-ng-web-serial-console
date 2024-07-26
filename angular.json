@@ -38,7 +38,7 @@
               "@angular/material/prebuilt-themes/rose-red.css",
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/xterm/lib/xterm.js"]
+            "scripts": ["node_modules/@xterm/xterm/lib/xterm.js"]
           },
           "configurations": {
             "production": {
