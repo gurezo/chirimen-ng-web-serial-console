@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "@angular-builders/jest": "^18.0.0",
-    "@angular-devkit/build-angular": "^18.1.1",
-    "@angular/cli": "^18.1.1",
+    "@angular-devkit/build-angular": "^18.1.2",
+    "@angular/cli": "^18.1.2",
     "@angular/compiler-cli": "^18.1.1",
     "@jest/globals": "^29.7.0",
     "@testing-library/angular": "^17.1.0",
