@@ -20,6 +20,9 @@ export const appConfig: ApplicationConfig = {
     provideStoreDevtools({
       maxAge: 25,
       connectInZone: true,
+      autoPause: true,
+      trace: false,
+      traceLimit: 75,
     }),
     provideRouterStore(),
     provideEffects(),
