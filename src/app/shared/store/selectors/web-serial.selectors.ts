@@ -1,5 +1,5 @@
 import { createSelector } from '@ngrx/store';
-import { WebSerialState } from '../reducers';
+import { WebSerialState } from '../models';
 
 export const selectWebSerialFeature = (state: WebSerialState) => state;
 
