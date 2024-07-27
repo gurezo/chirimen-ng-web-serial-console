@@ -1,9 +1,9 @@
 import { createSelector } from '@ngrx/store';
 import { WebSerialState } from '../reducers';
 
-export const selectFeature = (state: WebSerialState) => state;
+export const selectWebSerialFeature = (state: WebSerialState) => state;
 
-export const selectFeatureCount = createSelector(
-  selectFeature,
+export const selectIsConnect = createSelector(
+  selectWebSerialFeature,
   (state: WebSerialState) => state.isConnect
 );
