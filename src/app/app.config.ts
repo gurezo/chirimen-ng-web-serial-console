@@ -5,13 +5,10 @@ import { provideEffects } from '@ngrx/effects';
 import { provideRouterStore } from '@ngrx/router-store';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { webSerialFeatureKey, webSerialReducer } from '@shared/store/reducers';
 import { provideMonacoEditor } from 'ngx-monaco-editor-v2';
 import { routes } from './app.routes';
 import { monacoConfig } from './constants';
-import {
-  webSerialFeatureKey,
-  webSerialReducer,
-} from './shared/reducers/web-serial.reducers';
 
 export const appConfig: ApplicationConfig = {
   providers: [
