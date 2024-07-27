@@ -26,6 +26,7 @@
     "@ngrx/router-store": "^18.0.1",
     "@ngrx/signals": "^18.0.0",
     "@ngrx/store": "^18.0.1",
+    "@ngrx/store-devtools": "^18.0.1",
     "@types/w3c-web-serial": "1.0.6",
     "@xterm/xterm": "^5.5.0",
     "monaco-editor": "^0.50.0",
