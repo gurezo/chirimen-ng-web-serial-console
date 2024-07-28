@@ -6,4 +6,4 @@ export const connectPort = createAction(
   '[Web Searial] Connect',
   props<{ isConnect: boolean; port: SerialPort }>()
 );
-export const disConnectPort = createAction('[Web Searial] Connect');
+export const disConnectPort = createAction('[Web Searial] disConnectPort');
