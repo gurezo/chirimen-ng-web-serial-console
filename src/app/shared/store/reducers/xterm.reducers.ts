@@ -1,8 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
+import { Terminal } from '@xterm/xterm';
 import * as XTermActions from '../actions/xterm.actions';
 import { XTermState } from '../models';
 
 export const initialXTermState: XTermState = {
+  terminal: new Terminal(),
   wirteData: '',
   readData: '',
   currentDirectory: '',
