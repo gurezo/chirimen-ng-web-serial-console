@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { WebSerialService } from '@app/shared';
+import * as WebSerialActions from '@app/shared/store/actions/web-serial.actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-console-containers',
@@ -7,13 +8,11 @@ import { WebSerialService } from '@app/shared';
   imports: [],
   templateUrl: './console-containers.component.html',
   styleUrl: './console-containers.component.scss',
-  providers: [WebSerialService],
 })
 export class ConsoleContainersComponent implements OnInit {
-  webSerial = inject(WebSerialService);
+  store = inject(Store);
 
-  async ngOnInit() {
-    // await this.webSerial.requestPort();
-    await this.webSerial.getPorts();
+  ngOnInit() {
+    this.store.dispatch(WebSerialActions.initPort());
   }
 }
