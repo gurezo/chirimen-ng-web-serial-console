@@ -7,11 +7,11 @@
   </div>
   <div class="button-area">
     <!-- ボタン群 -->
-    <button (click)="loadFile()">load file</button>
-    <button (click)="save()">save file</button>
-    <button (click)="create()">new file</button>
-    <button (click)="delete()">delete file</button>
-    <button (click)="rename()">rename file</button>
+    <app-button [label]="'load file'" (clickEvent)="loadFile()" />
+    <app-button [label]="'save file'" (clickEvent)="save()" />
+    <app-button [label]="'new file'" (clickEvent)="create()" />
+    <app-button [label]="'delete fil'" (clickEvent)="delete()" />
+    <app-button [label]="'rename file'" (clickEvent)="rename()" />
   </div>
   <div>
     <!-- エディター -->

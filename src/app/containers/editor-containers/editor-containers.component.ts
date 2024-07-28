@@ -1,12 +1,13 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ButtonComponent } from '@app/shared';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 import { MonacoEditorService } from './services';
 
 @Component({
   selector: 'app-editor-containers',
   standalone: true,
-  imports: [FormsModule, MonacoEditorModule],
+  imports: [FormsModule, MonacoEditorModule, ButtonComponent],
   templateUrl: './editor-containers.component.html',
   styleUrl: './editor-containers.component.scss',
   providers: [MonacoEditorService],
