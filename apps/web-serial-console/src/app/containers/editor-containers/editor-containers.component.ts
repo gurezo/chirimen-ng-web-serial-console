@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ButtonComponent } from '@app/shared';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
+import { ButtonComponent } from '../../shared';
 import { MonacoEditorService } from './services';
 
 @Component({

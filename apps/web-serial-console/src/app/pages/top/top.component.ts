@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { ButtonComponent } from '@app/shared';
+import { ButtonComponent } from '../../shared';
 
 @Component({
   selector: 'app-top',
