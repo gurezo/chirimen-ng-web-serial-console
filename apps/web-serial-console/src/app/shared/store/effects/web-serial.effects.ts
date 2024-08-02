@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { WebSerialService } from '@app/shared/service';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { WebSerialService } from '../../service';
 import * as WebSerialActions from '../actions/web-serial.actions';
 
 @Injectable()
