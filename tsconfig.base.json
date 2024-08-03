@@ -12,6 +12,9 @@
       "ES2022",
       "dom"
     ],
+    "typeRoots": [
+      "node_modules/@types","@types/jest"
+    ],
     "skipLibCheck": true,
     "baseUrl": "src",
     "paths": {
