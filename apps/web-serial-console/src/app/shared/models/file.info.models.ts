@@ -23,4 +23,5 @@ export interface FileInfo {
   type: FileType;
   size: number;
   child: FileInfo[];
+  isOpened: boolean;
 }
