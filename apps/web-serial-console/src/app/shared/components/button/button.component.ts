@@ -9,5 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class ButtonComponent {
   @Input() label!: string;
+  @Input() color = '';
   @Output() clickEvent = new EventEmitter<void>();
 }
