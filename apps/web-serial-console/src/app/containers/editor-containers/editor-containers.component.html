@@ -7,7 +7,11 @@
   </div>
   <div class="button-area">
     <!-- ボタン群 -->
-    <app-button [label]="'load file'" (clickEvent)="loadFile()" />
+    <app-button
+      [label]="'load file'"
+      (clickEvent)="loadFile()"
+      [color]="'primary'"
+    />
     <app-button [label]="'save file'" (clickEvent)="save()" />
     <app-button [label]="'new file'" (clickEvent)="create()" />
     <app-button [label]="'delete fil'" (clickEvent)="delete()" />
