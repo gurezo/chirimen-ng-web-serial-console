@@ -1,12 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { WebSerialService } from '../../shared';
+import { TreeComponent } from '../../shared/components/tree/tree.component';
 import * as WebSerialActions from '../../shared/store/actions/web-serial.actions';
 
 @Component({
   selector: 'app-console-containers',
   standalone: true,
-  imports: [],
+  imports: [TreeComponent],
   templateUrl: './console-containers.component.html',
   styleUrl: './console-containers.component.scss',
   providers: [WebSerialService],
