@@ -11,6 +11,9 @@ import {
   of as observableOf,
 } from 'rxjs';
 import { delay, map, shareReplay } from 'rxjs/operators';
+import { LoadingState } from './loading.state';
+import { RawData } from './raw-data';
+import { TransformedData } from './transformed.data';
 
 interface BackendData {
   id: string;
@@ -73,36 +76,6 @@ class FakeDataBackend {
     return observableOf(
       [...TREE_DATA.values()].filter((datum) => !datum.parent),
     ).pipe(delay(this._getRandomDelayTime()));
-  }
-}
-
-type LoadingState = 'INIT' | 'LOADING' | 'LOADED';
-
-interface RawData {
-  id: string;
-  name: string;
-  parentId?: string;
-  childrenIds?: string[];
-  childrenLoading: LoadingState;
-}
-
-class TransformedData {
-  constructor(public raw: RawData) {}
-
-  areChildrenLoading() {
-    return this.raw.childrenLoading === 'LOADING';
-  }
-
-  isExpandable() {
-    return (
-      (this.raw.childrenLoading === 'INIT' ||
-        this.raw.childrenLoading === 'LOADED') &&
-      !!this.raw.childrenIds?.length
-    );
-  }
-
-  isLeaf() {
-    return !this.isExpandable() && !this.areChildrenLoading();
   }
 }
 
