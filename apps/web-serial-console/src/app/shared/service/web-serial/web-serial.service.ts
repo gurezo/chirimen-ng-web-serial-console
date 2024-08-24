@@ -1,8 +1,4 @@
 import { Injectable } from '@angular/core';
-// TODO: この import はどうするか
-// 参照自体は、下記パスで出来る
-// node_modules/.pnpm/@types+w3c-web-serial@1.0.6/node_modules/@types/w3c-web-serial/index.d.ts
-// import { SerialPort } from 'web-serial-polyfill';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class WebSerialService {
   // TODO: シリアルポートの状態管理をどうするか
   // NgRx のルートストアに登録するか、サービス内で管理するか
-  serialPort: SerialPort | undefined = undefined;
+  // serialPort: SerialPort | undefined = undefined;
   encoder = new TextEncoder();
   lang: string = 'en';
 
@@ -26,22 +22,22 @@ export class WebSerialService {
 
   async requestPort(): Promise<SerialPort | null> {
     try {
-      this.serialPort = await navigator.serial.requestPort();
-      await this.serialPort.open({ baudRate: 115200 });
-      console.log('this.serialPort', this.serialPort);
-      return this.serialPort;
+      const serialPort = await navigator.serial.requestPort();
+      await serialPort.open({ baudRate: 115200 });
+      console.log('this.serialPort', serialPort);
+      return serialPort;
     } catch (error) {
       return null;
     }
   }
 
-  portWrite(data: any): boolean {
-    if (!this.serialPort) {
+  portWrite(serialPort: SerialPort, data: any): boolean {
+    if (!serialPort) {
       return false;
     }
 
     try {
-      const writer = this.serialPort?.writable?.getWriter();
+      const writer = serialPort?.writable?.getWriter();
       writer?.write(this.encoder.encode(data));
       writer?.releaseLock();
       return true;
@@ -51,13 +47,13 @@ export class WebSerialService {
     }
   }
 
-  portRead() {
-    if (!this.serialPort) {
+  portRead(serialPort: SerialPort) {
+    if (!serialPort) {
       return false;
     }
 
     try {
-      const reader = this.serialPort?.readable?.getReader();
+      const reader = serialPort?.readable?.getReader();
       return true;
     } catch (error) {
       console.error(error);
@@ -65,9 +61,9 @@ export class WebSerialService {
     }
   }
 
-  async closePort(): Promise<boolean> {
+  async closePort(serialPort: SerialPort): Promise<boolean> {
     try {
-      this.serialPort?.close();
+      serialPort?.close();
     } catch (error) {
       console.error(error);
     } finally {
