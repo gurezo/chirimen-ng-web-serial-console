@@ -16,7 +16,7 @@ const textFileExtensions = [
   '.php',
 ];
 
-function arrayBufferToBase64(buffer: number) {
+export function arrayBufferToBase64(buffer: number) {
   var binary = '';
   var bytes = new Uint8Array(buffer);
   var len = bytes.byteLength;
@@ -26,7 +26,7 @@ function arrayBufferToBase64(buffer: number) {
   return window.btoa(binary);
 }
 
-function base64ToArrayBuffer(base64: string) {
+export function base64ToArrayBuffer(base64: string) {
   var binary_string = window.atob(base64);
   var len = binary_string.length;
   var bytes = new Uint8Array(len);
@@ -36,7 +36,7 @@ function base64ToArrayBuffer(base64: string) {
   return bytes.buffer;
 }
 
-function getOutputLines(str: string) {
+export function getOutputLines(str: string) {
   var lines = str.split('\n');
   var ans = [];
   for (var i = 0; i < lines.length; i++) {
@@ -45,26 +45,26 @@ function getOutputLines(str: string) {
   return ans;
 }
 
-function pad2(inp: string) {
+export function pad2(inp: string) {
   return ('0' + inp).slice(-2);
 }
 
-function str2arrayBuffer_old(str: string) {
+export function str2arrayBuffer_old(str: string) {
   // textDecoder使わないタイプ・・
-  return new Promise(function (callback) {
+  return new Promise((callback) => {
     // https://qiita.com/ukyo/items/1626defd020b2157e6bf
     var fr = new FileReader();
-    fr.onloadend = function () {
+    fr.onloadend = () => {
       callback(fr.result);
     };
     fr.readAsArrayBuffer(new Blob([str]));
   });
 }
 
-function str2arrayBuffer(str: any) {
+export function str2arrayBuffer(str: any) {
   return new TextEncoder().encode(str);
 }
 
-function arrayBuffer2str(buf: any) {
+export function arrayBuffer2str(buf: any) {
   return new TextDecoder('utf-8').decode(buf);
 }
