@@ -49,18 +49,6 @@ export function pad2(inp: string) {
   return ('0' + inp).slice(-2);
 }
 
-export function str2arrayBuffer_old(str: string) {
-  // textDecoder使わないタイプ・・
-  return new Promise((callback) => {
-    // https://qiita.com/ukyo/items/1626defd020b2157e6bf
-    var fr = new FileReader();
-    fr.onloadend = () => {
-      callback(fr.result);
-    };
-    fr.readAsArrayBuffer(new Blob([str]));
-  });
-}
-
 export function str2arrayBuffer(str: any) {
   return new TextEncoder().encode(str);
 }
