@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import * as WebSerialActions from '../actions/web-serial.actions';
+import { WebSerialActions } from '../actions/web-serial.actions';
 import { WebSerialState } from '../models';
 
 export const initialWebSerialState: WebSerialState = {
@@ -23,5 +23,5 @@ export const webSerialReducer = createReducer(
   on(WebSerialActions.disConnectPort, (state) => ({
     ...state,
     initialWebSerialState,
-  }))
+  })),
 );

@@ -1,9 +1,10 @@
-import { createAction, props } from '@ngrx/store';
-import { SerialPort } from 'web-serial-polyfill';
+import { createActionGroup, emptyProps, props } from '@ngrx/store';
 
-export const initPort = createAction('[Web Searial] initialize');
-export const connectPort = createAction(
-  '[Web Searial] Connect',
-  props<{ isConnect: boolean; port: SerialPort }>()
-);
-export const disConnectPort = createAction('[Web Searial] disConnectPort');
+export const WebSerialActions = createActionGroup({
+  source: '[Web Searial]',
+  events: {
+    initPort: emptyProps(),
+    connectPort: props<{ isConnect: boolean; port: SerialPort }>(),
+    disConnectPort: emptyProps(),
+  },
+});
