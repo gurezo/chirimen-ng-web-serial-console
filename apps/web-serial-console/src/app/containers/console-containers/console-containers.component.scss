@@ -1,0 +1,24 @@
+h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 16px;
+}
+
+#terminal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+}
+
+.outline {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 16px;
+}

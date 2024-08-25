@@ -1,13 +1,19 @@
-<h1>console</h1>
-<div>
-  <!-- 接続ボタン -->
-  <div></div>
-  <!-- コンソール画面 -->
+<h1>Web Serial Consle</h1>
+<div class="outline">
   <div>
-    <div id="terminal"></div>
+    <!-- 接続ボタン -->
+    <div>
+      <app-button [label]="label" (clickEvent)="onClick()" />
+    </div>
   </div>
-  <!-- ディレクトリツリー -->
   <div>
-    <app-tree />
+    <!-- コンソール画面 -->
+    <div>
+      <div id="terminal"></div>
+    </div>
+    <!-- ディレクトリツリー -->
+    <div>
+      <app-tree />
+    </div>
   </div>
 </div>

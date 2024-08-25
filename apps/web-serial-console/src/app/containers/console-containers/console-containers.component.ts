@@ -1,13 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { WebSerialService } from '../../shared';
-import { TreeComponent } from '../../shared/components/tree/tree.component';
-import * as WebSerialActions from '../../shared/store/actions/web-serial.actions';
+import {
+  ButtonComponent,
+  TreeComponent,
+  WebSerialActions,
+  WebSerialService,
+} from '../../shared';
 
 @Component({
   selector: 'app-console-containers',
   standalone: true,
-  imports: [TreeComponent],
+  imports: [ButtonComponent, TreeComponent],
   templateUrl: './console-containers.component.html',
   styleUrl: './console-containers.component.scss',
   providers: [WebSerialService],
@@ -16,8 +19,13 @@ export class ConsoleContainersComponent implements OnInit {
   store = inject(Store);
   service = inject(WebSerialService);
 
-  async ngOnInit() {
+  label = 'connect';
+
+  ngOnInit() {
     this.store.dispatch(WebSerialActions.initPort());
-    await this.service.requestPort();
+  }
+
+  onClick() {
+    this.store.dispatch(WebSerialActions.initPort());
   }
 }
