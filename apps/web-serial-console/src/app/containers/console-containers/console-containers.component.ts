@@ -1,4 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { Store } from '@ngrx/store';
 import {
   ButtonComponent,
@@ -10,7 +11,7 @@ import {
 @Component({
   selector: 'app-console-containers',
   standalone: true,
-  imports: [ButtonComponent, TreeComponent],
+  imports: [ButtonComponent, MatToolbarModule, TreeComponent],
   templateUrl: './console-containers.component.html',
   styleUrl: './console-containers.component.scss',
   providers: [WebSerialService],

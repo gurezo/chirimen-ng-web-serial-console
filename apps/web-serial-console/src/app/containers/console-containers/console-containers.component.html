@@ -1,19 +1,21 @@
 <h1>Web Serial Consle</h1>
-<div class="outline">
-  <div>
+<div class="wrapper">
+  <div class="box1">
     <!-- 接続ボタン -->
-    <div>
-      <app-button [label]="label" (clickEvent)="onClick()" />
-    </div>
+    <app-button [label]="label" (clickEvent)="onClick()" />
   </div>
-  <div>
-    <!-- コンソール画面 -->
-    <div>
-      <div id="terminal"></div>
-    </div>
-    <!-- ディレクトリツリー -->
-    <div>
-      <app-tree />
-    </div>
+  <div class="box1">
+    <!-- パンくず -->
+    <mat-toolbar>
+      <mat-toolbar-row> ここにパンくずを表示 </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+  <!-- コンソール画面 -->
+  <div class="box2">
+    <div id="terminal"></div>
+  </div>
+  <!-- ディレクトリツリー -->
+  <div class="box2">
+    <app-tree />
   </div>
 </div>
