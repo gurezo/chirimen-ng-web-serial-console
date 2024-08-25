@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { Store } from '@ngrx/store';
 import {
+  BreadcombComponent,
   ButtonComponent,
   TreeComponent,
   WebSerialActions,
@@ -11,7 +11,7 @@ import {
 @Component({
   selector: 'app-console-containers',
   standalone: true,
-  imports: [ButtonComponent, MatToolbarModule, TreeComponent],
+  imports: [BreadcombComponent, ButtonComponent, TreeComponent],
   templateUrl: './console-containers.component.html',
   styleUrl: './console-containers.component.scss',
   providers: [WebSerialService],
