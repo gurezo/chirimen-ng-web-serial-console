@@ -1,4 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { SerialPort } from 'web-serial-polyfill';
 
 export const WebSerialActions = createActionGroup({
   source: '[Web Searial]',
