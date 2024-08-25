@@ -1,16 +1,9 @@
 import { Routes } from '@angular/router';
 import { browserCheckGuard } from './guards';
-import { TopComponent } from './pages/top/top.component';
 
 export const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    component: TopComponent,
-    canActivate: [browserCheckGuard],
-  },
-  {
-    path: 'console',
     loadComponent: () => import('./pages/console/console.component'),
     canActivate: [browserCheckGuard],
   },
