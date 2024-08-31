@@ -49,10 +49,10 @@ export function pad2(inp: string) {
   return ('0' + inp).slice(-2);
 }
 
-export function str2arrayBuffer(str: any) {
+export function stringToArrayBuffer(str: any) {
   return new TextEncoder().encode(str);
 }
 
-export function arrayBuffer2str(buf: any) {
+export function arrayBufferToString(buf: any) {
   return new TextDecoder('utf-8').decode(buf);
 }
