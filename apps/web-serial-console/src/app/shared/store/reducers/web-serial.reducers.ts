@@ -24,4 +24,10 @@ export const webSerialReducer = createReducer(
     ...state,
     initialWebSerialState,
   })),
+  on(WebSerialActions.read, (state) => ({
+    ...state,
+  })),
+  on(WebSerialActions.write, (state) => ({
+    ...state,
+  })),
 );
