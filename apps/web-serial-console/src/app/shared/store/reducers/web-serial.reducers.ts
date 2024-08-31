@@ -12,15 +12,15 @@ export const webSerialFeatureKey = 'webSerial';
 
 export const webSerialReducer = createReducer(
   initialWebSerialState,
-  on(WebSerialActions.initPort, (state) => ({
+  on(WebSerialActions.init, (state) => ({
     ...state,
   })),
-  on(WebSerialActions.connectPort, (state, { isConnect, port }) => ({
+  on(WebSerialActions.connect, (state, { isConnect, port }) => ({
     ...state,
     isConnect,
     port,
   })),
-  on(WebSerialActions.disConnectPort, (state) => ({
+  on(WebSerialActions.disConnect, (state) => ({
     ...state,
     initialWebSerialState,
   })),

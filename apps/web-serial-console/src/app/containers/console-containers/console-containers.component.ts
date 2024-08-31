@@ -23,10 +23,10 @@ export class ConsoleContainersComponent implements OnInit {
   label = 'connect';
 
   ngOnInit() {
-    this.store.dispatch(WebSerialActions.initPort());
+    this.store.dispatch(WebSerialActions.init());
   }
 
   onClick() {
-    this.store.dispatch(WebSerialActions.initPort());
+    this.store.dispatch(WebSerialActions.init());
   }
 }

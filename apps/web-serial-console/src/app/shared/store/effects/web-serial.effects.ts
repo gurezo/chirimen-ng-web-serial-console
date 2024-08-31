@@ -10,7 +10,7 @@ export class WebSerialEffects {
 
   init$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(WebSerialActions.initPort),
+      ofType(WebSerialActions.init),
       // TODO: ここでシリアルポートのリクエストを行う
       //  exhaustMap(() => from(this.service.requestPort()).pipe(
       //   map(() => of())
