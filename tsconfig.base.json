@@ -8,22 +8,13 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "lib": [
-      "ES2022",
-      "dom"
-    ],
-    "typeRoots": [
-      "node_modules/@types","@types/jest"
-    ],
+    "lib": ["ES2022", "dom"],
+    "typeRoots": ["node_modules/@types", "@types/jest"],
     "skipLibCheck": true,
     "baseUrl": "src",
     "paths": {
-      "@app/*": [
-        "apps/web-serial-console/src/app/*"
-      ],
-      "@shared/*": [
-        "apps/web-serial-console/src/app/shared/*"
-      ]
+      "@app/*": ["apps/web-serial-console/src/app/*"],
+      "@shared/*": ["apps/web-serial-console/src/app/shared/*"]
     }
   }
 }
