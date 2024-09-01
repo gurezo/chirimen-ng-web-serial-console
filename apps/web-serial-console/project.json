@@ -16,15 +16,13 @@
         "outputPath": "dist/chirimen-ng-web-serial-console",
         "index": "apps/web-serial-console/src/index.html",
         "browser": "apps/web-serial-console/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/web-serial-console/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "public"
+            "input": "apps/web-serial-console/public"
           },
           {
             "glob": "**/*",
@@ -36,9 +34,7 @@
           "@angular/material/prebuilt-themes/rose-red.css",
           "apps/web-serial-console/src/styles.scss"
         ],
-        "scripts": [
-          "node_modules/@xterm/xterm/lib/xterm.js"
-        ]
+        "scripts": ["node_modules/@xterm/xterm/lib/xterm.js"]
       },
       "configurations": {
         "production": {
@@ -82,10 +78,7 @@
     "test": {
       "executor": "@angular-builders/jest:run",
       "options": {
-        "polyfills": [
-          "zone.js",
-          "zone.js/testing"
-        ],
+        "polyfills": ["zone.js", "zone.js/testing"],
         "tsConfig": "apps/web-serial-console/tsconfig.spec.json",
         "configPath": "apps/web-serial-console/jest.config.ts"
       }
