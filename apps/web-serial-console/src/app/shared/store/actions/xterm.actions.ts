@@ -1,6 +1,6 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
 
-export const WebSerialActions = createActionGroup({
+export const XTermActions = createActionGroup({
   source: '[XTerm]',
   events: {
     init: emptyProps(),

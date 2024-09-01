@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import * as XTermActions from '../actions/xterm.actions';
+import { XTermActions } from '../actions/xterm.actions';
 import { XTermState } from '../models';
 
 export const initialXTermState: XTermState = {
@@ -33,5 +33,5 @@ export const xtermReducer = createReducer(
   on(XTermActions.currentDirectory, (state, { currentDirectory }) => ({
     ...state,
     currentDirectory,
-  }))
+  })),
 );
