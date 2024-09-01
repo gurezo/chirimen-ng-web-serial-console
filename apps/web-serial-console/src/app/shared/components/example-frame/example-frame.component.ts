@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-example-frame',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './example-frame.component.html',
   styleUrl: './example-frame.component.scss',
 })
