@@ -1,7 +1,25 @@
 <div>
-  <img src="wallpaperS.png" alt="" />
-</div>
+  <div class="box1">
+    <app-button [label]="'Back To Console'" routerLink="/" />
+    <app-button [label]="'Setup CHIRIMEN'" (clickEvent)="setUpChirimen()" />
+    <app-button [label]="'I2C Detect'" (clickEvent)="i2cDetect()" />
+    <app-button [label]="'Get Example'" (clickEvent)="getExample()" />
+    <app-button
+      [label]="'Resident App Conf'"
+      (clickEvent)="residentAppConf()"
+    />
+  </div>
+  <div>
+    @if (mode === pageMode.SETUP) {
+      <div>
+        <img src="wallpaperS.png" alt="" />
+      </div>
+    }
 
-<div style="border: 1px solid black; text-align: center; height: 100%">
-  <app-example-frame />
+    @if (mode === pageMode.EXAMPLE) {
+      <div id="frame">
+        <app-example-frame />
+      </div>
+    }
+  </div>
 </div>
