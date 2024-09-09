@@ -4,7 +4,7 @@ import { ButtonComponent, ExampleFrameComponent } from '../../shared';
 
 const Mode = {
   SETUP: 'setup',
-  I2C: 'i2c',
+  i2cDetect: 'i2c',
   RESIDENT: 'resident',
   EXAMPLE: 'example',
 };
@@ -25,7 +25,7 @@ export class PinAssignContainersComponent {
     this.mode = this.pageMode.SETUP;
   }
   i2cDetect() {
-    this.mode = this.pageMode.I2C;
+    this.mode = this.pageMode.i2cDetect;
   }
   getExample() {
     this.mode = this.pageMode.EXAMPLE;
