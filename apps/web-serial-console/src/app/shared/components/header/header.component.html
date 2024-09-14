@@ -1,1 +1,26 @@
-<p>header works!</p>
+<header>
+  <div class="header-container">
+    <!-- ロゴ -->
+    <div class="logo-container" routerLink="/">
+      <img src="CHIRIMEN-banner.png" alt="Web Serial Console" />
+    </div>
+    <!-- バーガーメニュー -->
+    <div class="menu-container">
+      <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/wifi-setting">
+          <mat-icon>network_wifi</mat-icon>
+          <span>wifi-setting</span>
+        </button>
+        <button mat-menu-item routerLink="/pin-assign">
+          <mat-icon>fiber_pin</mat-icon>
+          <span>pin-assign</span>
+        </button>
+        <button mat-menu-item routerLink="/editor">
+          <mat-icon>insert_drive_file</mat-icon>
+          <span>editor</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</header>
