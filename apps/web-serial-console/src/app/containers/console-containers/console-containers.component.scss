@@ -13,7 +13,7 @@ h1 {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2カラムに分割 */
+  grid-template-columns: 2fr 3fr; /* 2:3 の比率に設定 */
   grid-auto-rows: minmax(100px, auto);
 }
 
@@ -25,4 +25,10 @@ h1 {
 .box2 {
   /* 各要素が1カラムずつを占める */
   grid-column: span 1;
+}
+
+#terminal {
+  height: 100%;
+  width: 100%;
+  background-color: black;
 }
