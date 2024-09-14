@@ -12,3 +12,10 @@ img {
   max-width: 100%; /* 画像サイズが親要素を超えないようにする（必要に応じて） */
   height: auto; /* アスペクト比を維持する */
 }
+
+iframe {
+  border: none;
+  height: 800px;
+  overflow: auto;
+  width: 1200px;
+}
