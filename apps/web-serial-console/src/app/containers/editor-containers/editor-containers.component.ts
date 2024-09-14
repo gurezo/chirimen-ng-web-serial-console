@@ -14,7 +14,12 @@ import { MonacoEditorService } from './services';
 })
 export class EditorContainersComponent implements OnInit {
   private monaca = inject(MonacoEditorService);
-  editorOptions = { theme: 'vs-dark', language: 'javascript' };
+  editorOptions = {
+    theme: 'vs-dark',
+    language: 'javascript',
+    automaticLayout: true,
+  };
+
   code: string = 'function x() {\nconsole.log("Hello world!");\n}';
 
   ngOnInit(): void {

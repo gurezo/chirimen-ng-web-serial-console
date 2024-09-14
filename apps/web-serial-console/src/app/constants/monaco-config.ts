@@ -1,9 +1,6 @@
 import { NgxMonacoEditorConfig } from 'ngx-monaco-editor-v2';
 
 export const monacoConfig: NgxMonacoEditorConfig = {
-  baseUrl: '/assets',
-  defaultOptions: {
-    scrollBeyondLastLine: false,
-    baseUrl: '/assets',
-  },
+  baseUrl: 'assets',
+  defaultOptions: { scrollBeyondLastLine: false },
 };
