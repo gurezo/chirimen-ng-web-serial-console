@@ -13,10 +13,16 @@ h1 {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr; /* 2カラムに分割 */
   grid-auto-rows: minmax(100px, auto);
 }
+
 .box1 {
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 3; /* 2カラム分を占める */
+}
+
+.box2 {
+  /* 各要素が1カラムずつを占める */
+  grid-column: span 1;
 }
