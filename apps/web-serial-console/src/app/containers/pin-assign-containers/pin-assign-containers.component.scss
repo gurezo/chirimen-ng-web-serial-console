@@ -8,16 +8,23 @@
   align-items: center; /* 横方向で中央寄せ */
 }
 
-.button {
-  flex-direction: row;
-  gap: 1rem;
-  height: auto;
-  text-align: center;
-  height: auto;
-}
-
 #frame {
   border: 1px solid black;
   text-align: center;
   height: 100%;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* ボタン間のスペースを均等に配置 */
+  width: 100%; /* ボタンを横方向でフル幅にする */
+  max-width: 1024px; /* 最大幅を設定してボタンが横に広がりすぎないようにする */
+  text-align: center;
+}
+
+app-button {
+  flex: 1; /* ボタンを均等に広げる */
+  margin: 0 1rem; /* 両側に余白を追加 */
+  min-width: 150px; /* 適宜調整 */
 }
