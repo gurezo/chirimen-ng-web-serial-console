@@ -7,16 +7,6 @@ export const routes: Routes = [
     loadComponent: () => import('./layout/layout-main/layout-main.component'),
     canActivate: [browserCheckGuard],
   },
-  // {
-  //   path: '',
-  //   loadComponent: () => import('./pages/console/console.component'),
-  //   canActivate: [browserCheckGuard],
-  // },
-  // {
-  //   path: 'editor',
-  //   loadComponent: () => import('./pages/editor/editor.component'),
-  //   canActivate: [browserCheckGuard],
-  // },
   {
     path: 'pin-assign',
     loadComponent: () => import('./pages/pin-assign/pin-assign.component'),
