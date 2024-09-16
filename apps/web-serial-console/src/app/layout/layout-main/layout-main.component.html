@@ -1,1 +1,28 @@
-<p>layout-main works!</p>
+<div class="wrapper">
+  <div class="box1">
+    <!-- 接続ボタン -->
+    <app-button [label]="label" (clickEvent)="onClick()" />
+  </div>
+  <div class="box1">
+    <!-- パンくず -->
+    <app-breadcomb />
+  </div>
+  <!-- ディレクトリツリー -->
+  <div class="box2">
+    <app-tree />
+  </div>
+  <div class="box2">
+    @switch (mode) {
+      @case ("console") {
+        <!-- コンソール画面 -->
+        <app-console-containers />
+      }
+      @case ("editor") {
+        <app-editor-containers />
+      }
+      @default {
+        <span>pleace Web Serail connect</span>
+      }
+    }
+  </div>
+</div>

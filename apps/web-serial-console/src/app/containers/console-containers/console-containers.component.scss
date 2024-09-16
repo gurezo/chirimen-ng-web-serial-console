@@ -1,7 +1,6 @@
 h1 {
-  font-size: 1.5em;
+  font-size: 1em;
   color: #333;
-  margin: 16px;
   text-align: center;
 }
 
@@ -9,26 +8,5 @@ h1 {
   height: 100%;
   width: 100%;
   background-color: black;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 2fr 3fr; /* 2:3 の比率に設定 */
-  grid-auto-rows: minmax(100px, auto);
-}
-
-.box1 {
-  grid-column-start: 1;
-  grid-column-end: 3; /* 2カラム分を占める */
-}
-
-.box2 {
-  /* 各要素が1カラムずつを占める */
-  grid-column: span 1;
-}
-
-#terminal {
-  height: 100%;
-  width: 100%;
-  background-color: black;
+  min-height: 600px;
 }
