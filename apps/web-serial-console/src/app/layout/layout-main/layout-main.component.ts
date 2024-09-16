@@ -30,7 +30,8 @@ export default class LayoutMainComponent {
   service = inject(WebSerialService);
 
   label = 'connect';
-  mode = 'editor';
+  mode = 'console';
+  isSerialConnected = true;
 
   ngOnInit() {
     this.store.dispatch(WebSerialActions.init());

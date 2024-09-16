@@ -3,26 +3,32 @@
     <!-- 接続ボタン -->
     <app-button [label]="label" (clickEvent)="onClick()" />
   </div>
-  <div class="box1">
-    <!-- パンくず -->
-    <app-breadcomb />
-  </div>
-  <!-- ディレクトリツリー -->
-  <div class="box2">
-    <app-tree />
-  </div>
-  <div class="box2">
-    @switch (mode) {
-      @case ("console") {
-        <!-- コンソール画面 -->
-        <app-console-containers />
+  @if (isSerialConnected) {
+    <div class="box1">
+      <!-- パンくず -->
+      <app-breadcomb />
+    </div>
+    <!-- ディレクトリツリー -->
+    <div class="box2">
+      <app-tree />
+    </div>
+    <div class="box2">
+      @switch (mode) {
+        @case ("console") {
+          <!-- コンソール画面 -->
+          <app-console-containers />
+        }
+        @case ("editor") {
+          <app-editor-containers />
+        }
+        @default {
+          <span>pleace Web Serail connect</span>
+        }
       }
-      @case ("editor") {
-        <app-editor-containers />
-      }
-      @default {
-        <span>pleace Web Serail connect</span>
-      }
-    }
-  </div>
+    </div>
+  } @else {
+    <div>
+      <h2>pleace Web Serail connect</h2>
+    </div>
+  }
 </div>
