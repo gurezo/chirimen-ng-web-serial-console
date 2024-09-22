@@ -21,7 +21,6 @@ export default class LayoutMainComponent {
   service = inject(WebSerialService);
 
   label = 'connect';
-  mode = 'console';
   isSerialConnected = true;
 
   ngOnInit() {

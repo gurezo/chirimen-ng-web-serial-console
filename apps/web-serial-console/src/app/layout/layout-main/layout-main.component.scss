@@ -1,9 +1,3 @@
-#terminal {
-  height: 100%;
-  width: 100%;
-  background-color: black;
-}
-
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 3fr; /* 1:3 の比率に設定 */
@@ -20,4 +14,20 @@
   /* 各要素が1カラムずつを占める */
   grid-column: span 1;
   min-height: 800px;
+}
+
+.serial-connect {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: center;
+  height: auto;
+  display: flex; /* Flexboxを使用 */
+  flex-direction: column; /* 縦に並べる */
+  justify-content: center; /* 横方向に中央寄せ */
+  align-items: center; /* 縦方向に中央寄せ */
+  min-height: 80vh; /* 画面全体の高さを指定して、中央に配置 */
+}
+
+.serial-connect h2 {
+  margin-bottom: 16px; /* h2とボタンの間に余白を追加 */
 }

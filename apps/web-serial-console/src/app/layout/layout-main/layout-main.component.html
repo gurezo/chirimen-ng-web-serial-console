@@ -1,8 +1,4 @@
 <div class="wrapper">
-  <div class="box1">
-    <!-- 接続ボタン -->
-    <app-button [label]="label" (clickEvent)="onClick()" />
-  </div>
   @if (isSerialConnected) {
     <div class="box1">
       <!-- パンくず -->
@@ -16,8 +12,9 @@
       <router-outlet />
     </div>
   } @else {
-    <div>
-      <h2>pleace Web Serail connect</h2>
+    <div class="serial-connect">
+      <h2>Please Web Serail connect</h2>
+      <app-button [label]="label" (clickEvent)="onClick()" />
     </div>
   }
 </div>
