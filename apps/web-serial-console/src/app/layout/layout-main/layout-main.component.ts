@@ -2,10 +2,6 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
-  ConsoleContainersComponent,
-  EditorContainersComponent,
-} from '../../containers';
-import {
   BreadcombComponent,
   ButtonComponent,
   TreeComponent,
@@ -16,14 +12,7 @@ import {
 @Component({
   selector: 'app-layout-main',
   standalone: true,
-  imports: [
-    BreadcombComponent,
-    ButtonComponent,
-    ConsoleContainersComponent,
-    EditorContainersComponent,
-    TreeComponent,
-    RouterOutlet,
-  ],
+  imports: [BreadcombComponent, ButtonComponent, TreeComponent, RouterOutlet],
   templateUrl: './layout-main.component.html',
   styleUrl: './layout-main.component.scss',
 })
