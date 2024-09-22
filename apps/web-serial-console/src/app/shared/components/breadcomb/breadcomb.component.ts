@@ -1,12 +1,13 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-breadcomb',
   standalone: true,
-  imports: [MatToolbarModule, MatIconModule, NgFor],
+  imports: [MatToolbarModule, MatIconModule, MatDividerModule, NgFor],
   templateUrl: './breadcomb.component.html',
   styleUrl: './breadcomb.component.scss',
 })
