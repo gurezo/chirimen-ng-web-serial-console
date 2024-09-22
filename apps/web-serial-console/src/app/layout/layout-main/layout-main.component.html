@@ -13,9 +13,9 @@
       <app-tree />
     </div>
     <div class="box2">
-      @switch (mode) {
+      <router-outlet />
+      <!-- @switch (mode) {
         @case ("console") {
-          <!-- コンソール画面 -->
           <app-console-containers />
         }
         @case ("editor") {
@@ -24,7 +24,7 @@
         @default {
           <span>pleace Web Serail connect</span>
         }
-      }
+      } -->
     </div>
   } @else {
     <div>

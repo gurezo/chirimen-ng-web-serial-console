@@ -6,38 +6,26 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./layout/layout-main/layout-main.component'),
     canActivate: [browserCheckGuard],
-    // children: [
-    //   {
-    //     path: 'console',
-    //     loadComponent: () => import('./pages/console/console.component'),
-    //   },
-    //   {
-    //     path: 'editor',
-    //     loadComponent: () => import('./pages/editor/editor.component'),
-    //   },
-    //   {
-    //     path: 'pin-assign',
-    //     loadComponent: () => import('./pages/pin-assign/pin-assign.component'),
-    //     canActivate: [browserCheckGuard],
-    //   },
-    //   {
-    //     path: 'wifi-setting',
-    //     loadComponent: () =>
-    //       import('./pages/wifi-setting/wifi-setting.component'),
-    //     canActivate: [browserCheckGuard],
-    //   },
-    // ],
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./pages/console/console.component'),
+      },
+      {
+        path: 'editor',
+        loadComponent: () => import('./pages/editor/editor.component'),
+      },
+      {
+        path: 'pin-assign',
+        loadComponent: () => import('./pages/pin-assign/pin-assign.component'),
+      },
+      {
+        path: 'wifi-setting',
+        loadComponent: () =>
+          import('./pages/wifi-setting/wifi-setting.component'),
+      },
+    ],
   },
-  // {
-  //   path: 'pin-assign',
-  //   loadComponent: () => import('./pages/pin-assign/pin-assign.component'),
-  //   canActivate: [browserCheckGuard],
-  // },
-  // {
-  //   path: 'wifi-setting',
-  //   loadComponent: () => import('./pages/wifi-setting/wifi-setting.component'),
-  //   canActivate: [browserCheckGuard],
-  // },
   {
     path: 'unsupported-browser',
     loadComponent: () =>

@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
   ConsoleContainersComponent,
@@ -21,6 +22,7 @@ import {
     ConsoleContainersComponent,
     EditorContainersComponent,
     TreeComponent,
+    RouterOutlet,
   ],
   templateUrl: './layout-main.component.html',
   styleUrl: './layout-main.component.scss',
