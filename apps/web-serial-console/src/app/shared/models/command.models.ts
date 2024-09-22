@@ -1,6 +1,8 @@
 const distro = 'linux-armv6l';
 const nodeVersion = 'v22.9.0';
 const chirimenDirectory = 'chirimenSetup';
+const cronSettingText = 'chirimenCronSetting.txt';
+const cronSettingLog = 'chirimenCronSetting.log';
 
 export const UseCommand = {
   cd: 'cd ',
@@ -16,7 +18,7 @@ export const UseCommandNode = {
   mkDir: 'sudo mkdir -p /usr/local/lib/nodejs',
   xJvf: `sudo tar -xJvf node-${nodeVersion}-${distro}.tar.xz -C /usr/local/lib/nodejs`,
   pathSet: `echo -n -e "# Nodejs\nVERSION${nodeVersion}=\nDISTRO=${distro}\n\nexport PATH=/usr/local/lib/nodejs/node-${nodeVersion}-${distro}/bin:$PATH\n" | tee -a ~/.profile'`,
-  forever: 'sudo npm install -g forever',
+  golobalInstall: 'sudo npm install -g forever',
 } as const;
 export type UseCommandNode =
   (typeof UseCommandNode)[keyof typeof UseCommandNode];
@@ -44,3 +46,24 @@ export const UseCommandCamera = {
 } as const;
 export type UseCommandCamera =
   (typeof UseCommandCamera)[keyof typeof UseCommandCamera];
+
+export const UseCommandI2C = {
+  detect: 'i2cdetect -y 1',
+} as const;
+export type UseCommandI2C = (typeof UseCommandI2C)[keyof typeof UseCommandI2C];
+
+export const UseCommandCron = {
+  remove: `rm ${cronSettingText}`,
+  touch: `touch ${cronSettingText}`,
+  regist: `crontab ./${cronSettingText}`,
+} as const;
+export type UseCommandCron =
+  (typeof UseCommandCron)[keyof typeof UseCommandCron];
+
+export const UseCommandForever = {
+  which: 'which forever',
+  list: 'forever list --plain',
+  start: 'forever start -w ', //ファイル名必須
+} as const;
+export type UseCommandForever =
+  (typeof UseCommandForever)[keyof typeof UseCommandForever];
