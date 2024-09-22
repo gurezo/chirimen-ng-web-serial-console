@@ -56,3 +56,6 @@ export function stringToArrayBuffer(str: any) {
 export function arrayBufferToString(buf: any) {
   return new TextDecoder('utf-8').decode(buf);
 }
+
+export const sleep = (msec: number) =>
+  new Promise((resolve) => setTimeout(resolve, msec));
