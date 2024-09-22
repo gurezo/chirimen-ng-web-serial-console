@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
@@ -12,7 +13,13 @@ import {
 @Component({
   selector: 'app-layout-main',
   standalone: true,
-  imports: [BreadcombComponent, ButtonComponent, TreeComponent, RouterOutlet],
+  imports: [
+    BreadcombComponent,
+    ButtonComponent,
+    MatDividerModule,
+    TreeComponent,
+    RouterOutlet,
+  ],
   templateUrl: './layout-main.component.html',
   styleUrl: './layout-main.component.scss',
 })
