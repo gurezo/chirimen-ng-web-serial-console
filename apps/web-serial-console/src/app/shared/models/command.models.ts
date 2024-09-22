@@ -3,10 +3,41 @@ const nodeVersion = 'v22.9.0';
 const chirimenDirectory = 'chirimenSetup';
 const cronSettingText = 'chirimenCronSetting.txt';
 const cronSettingLog = 'chirimenCronSetting.log';
+const wiFiSetup = `\
+#!/bin/sh
+set -eu
+
+SSID=\$1
+PASSWORD=\$2
+DEBIAN_VERSION=$(cut -d . -f 1 /etc/debian_version)
+
+if [ "$DEBIAN_VERSION" -le 11 ]; then
+  WPA_CONF_PATH=/etc/wpa_supplicant/wpa_supplicant.conf
+  sudo sh -c "cat > $WPA_CONF_PATH" <<EOL
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=JP
+network={
+  ssid="$SSID"
+  psk="$PASSWORD"
+}
+EOL
+  sudo wpa_cli -i wlan0 reconfigure
+else
+  sudo nmcli dev wifi connect "$SSID" password "$PASSWORD"
+fi
+`;
 
 export const UseCommand = {
   cd: 'cd ',
   wget: 'wget ',
+  pwd: 'pwd ',
+  sudo: 'sudo ',
+  ls: 'ls -al --quoting-style=c',
+  rm: 'rm ', // フルパス、オプションをどうするか？
+  cp: 'cp ', // コピー元・先をどうするか？
+  mv: 'mv ', // コピー元・先をどうするか？
+  base64: 'base64 ', // パスをどうするか？
 } as const;
 export type UseCommand = (typeof UseCommand)[keyof typeof UseCommand];
 
@@ -64,3 +95,21 @@ export const UseCommandCron = {
 } as const;
 export type UseCommandCron =
   (typeof UseCommandCron)[keyof typeof UseCommandCron];
+
+export const UseCommandOS = {
+  historyControl: 'HISTCONTROL=ignoreboth', // ignorespace と ignoredups の省略形
+  timezone: 'sudo timedatectl set-timezone Asia/Tokyo',
+} as const;
+export type UseCommandOS = (typeof UseCommandOS)[keyof typeof UseCommandOS];
+
+export const UseCommandWifi = {
+  scan: 'sudo iwlist wlan0 scan',
+  ifconfig: 'ifconfig',
+  ping: 'ping',
+  ssh: 'sudo touch /boot/ssh',
+  setup: wiFiSetup,
+  // chmod: ` chmod +x wifi_setup.sh && ./wifi_setup.sh "${ssid}" "${pass}"`, // ssid, pass をどうするか？
+  reboot: 'sudo reboot',
+} as const;
+export type UseCommandWifi =
+  (typeof UseCommandWifi)[keyof typeof UseCommandWifi];
