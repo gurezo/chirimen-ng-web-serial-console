@@ -14,6 +14,8 @@ import { RouterLink } from '@angular/router';
 export class HeaderComponent implements OnInit {
   private domSanitizer = inject(DomSanitizer);
   private matIconRegistry = inject(MatIconRegistry);
+  isSerialConnected = true;
+  isNotSerialConnected = !this.isSerialConnected;
 
   ngOnInit(): void {
     this.matIconRegistry.addSvgIcon(

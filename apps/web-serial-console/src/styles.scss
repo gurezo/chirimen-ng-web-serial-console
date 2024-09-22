@@ -8,7 +8,10 @@
 
 html,
 body {
+  margin: 0;
+  padding: 0;
   height: 100%;
+  overflow: hidden; /* ビューポート全体でスクロールさせない */
 }
 body {
   margin: 0;

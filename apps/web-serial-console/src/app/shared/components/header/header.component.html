@@ -6,19 +6,35 @@
     <div class="menu-container">
       <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/">
+        <button
+          mat-menu-item
+          routerLink="/"
+          disabled="{{ isNotSerialConnected }}"
+        >
           <mat-icon>terminal</mat-icon>
           <span>console</span>
         </button>
-        <button mat-menu-item routerLink="/editor">
+        <button
+          mat-menu-item
+          routerLink="/editor"
+          disabled="{{ isNotSerialConnected }}"
+        >
           <mat-icon>insert_drive_file</mat-icon>
           <span>editor</span>
         </button>
-        <button mat-menu-item routerLink="/wifi-setting">
+        <button
+          mat-menu-item
+          routerLink="/wifi-setting"
+          disabled="{{ isNotSerialConnected }}"
+        >
           <mat-icon>network_wifi</mat-icon>
           <span>wifi-setting</span>
         </button>
-        <button mat-menu-item routerLink="/pin-assign">
+        <button
+          mat-menu-item
+          routerLink="/pin-assign"
+          disabled="{{ isNotSerialConnected }}"
+        >
           <mat-icon>fiber_pin</mat-icon>
           <span>pin-assign</span>
         </button>

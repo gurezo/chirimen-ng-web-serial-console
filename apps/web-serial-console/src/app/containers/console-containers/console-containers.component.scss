@@ -8,5 +8,8 @@ h1 {
   height: 100%;
   width: 100%;
   background-color: black;
-  min-height: 600px;
+  /* box2 に収まるように修正 */
+  flex-grow: 1;
+  overflow: auto; /* 必要に応じてスクロール */
+  min-height: 65vh; /* 画面全体の高さを指定して、中央に配置 */
 }
