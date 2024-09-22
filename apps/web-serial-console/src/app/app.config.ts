@@ -13,7 +13,7 @@ import {
   xtermReducer,
 } from '../app/shared/store';
 import { routes } from './app.routes';
-import { monacoConfig } from './constants';
+import { monacoConfig } from './shared';
 
 export const appConfig: ApplicationConfig = {
   providers: [

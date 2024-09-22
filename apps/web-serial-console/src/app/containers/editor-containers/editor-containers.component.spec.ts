@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MonacoEditorModule, provideMonacoEditor } from 'ngx-monaco-editor-v2';
-import { monacoConfig } from '../../constants';
+import { monacoConfig } from '../../shared';
 import { EditorContainersComponent } from './editor-containers.component';
 
 describe('EditorContainersComponent', () => {
