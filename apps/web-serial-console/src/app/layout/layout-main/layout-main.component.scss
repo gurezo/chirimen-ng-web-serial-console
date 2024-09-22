@@ -19,6 +19,7 @@
   min-height: 0; /* オーバーフローを防ぐため */
   overflow: hidden; /* コンテンツがはみ出さないようにする */
 }
+
 .serial-connect {
   grid-column-start: 1;
   grid-column-end: 3;
