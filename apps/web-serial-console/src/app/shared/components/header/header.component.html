@@ -8,6 +8,14 @@
     <div class="menu-container">
       <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
       <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/">
+          <mat-icon>terminal</mat-icon>
+          <span>console</span>
+        </button>
+        <button mat-menu-item routerLink="/editor">
+          <mat-icon>insert_drive_file</mat-icon>
+          <span>editor</span>
+        </button>
         <button mat-menu-item routerLink="/wifi-setting">
           <mat-icon>network_wifi</mat-icon>
           <span>wifi-setting</span>
@@ -16,10 +24,6 @@
           <mat-icon>fiber_pin</mat-icon>
           <span>pin-assign</span>
         </button>
-        <!-- <button mat-menu-item routerLink="/editor">
-          <mat-icon>insert_drive_file</mat-icon>
-          <span>editor</span>
-        </button> -->
       </mat-menu>
     </div>
   </div>
