@@ -56,14 +56,11 @@ export const UseCommandCron = {
   remove: `rm ${cronSettingText}`,
   touch: `touch ${cronSettingText}`,
   regist: `crontab ./${cronSettingText}`,
+  which: 'which forever',
+  list: 'forever list --plain',
+  start: 'forever start -w ', // ファイル名必須
+  echo: 'echo -e "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\n@reboot /usr/local/bin/forever start ', // ファイル名、アプリ名必須
+  redirection: ` >> /tmp/${cronSettingLog} 2>&1" > ${cronSettingText}`,
 } as const;
 export type UseCommandCron =
   (typeof UseCommandCron)[keyof typeof UseCommandCron];
-
-export const UseCommandForever = {
-  which: 'which forever',
-  list: 'forever list --plain',
-  start: 'forever start -w ', //ファイル名必須
-} as const;
-export type UseCommandForever =
-  (typeof UseCommandForever)[keyof typeof UseCommandForever];
