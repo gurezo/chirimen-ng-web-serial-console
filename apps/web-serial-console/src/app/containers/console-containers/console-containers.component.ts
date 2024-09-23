@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Terminal } from '@xterm/xterm';
 import { WebSerialService } from '../../shared';
 
 @Component({
@@ -16,5 +17,21 @@ export class ConsoleContainersComponent implements OnInit {
 
   label = 'connect';
 
-  ngOnInit() {}
+  ngOnInit() {
+    const term = new Terminal({
+      cols: 80,
+      rows: 24,
+      cursorBlink: true, //カーソルの点滅
+      cursorStyle: 'underline', //カーソルをアンダーライン
+      cursorWidth: 2, //カーソルの太さ
+    });
+    const terminal = document.getElementById('terminal');
+    if (!terminal) {
+      console.log('failed to detect #terminal');
+      return;
+    }
+
+    term.open(terminal);
+    // term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ');
+  }
 }
