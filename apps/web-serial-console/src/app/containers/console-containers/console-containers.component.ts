@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Terminal } from '@xterm/xterm';
 import { WebSerialService, xtermConsoleConfigOptions } from '../../shared';
@@ -11,24 +11,25 @@ import { WebSerialService, xtermConsoleConfigOptions } from '../../shared';
   styleUrl: './console-containers.component.scss',
   providers: [WebSerialService],
 })
-export class ConsoleContainersComponent implements OnInit {
+export class ConsoleContainersComponent implements AfterViewInit {
   store = inject(Store);
   service = inject(WebSerialService);
 
   label = 'connect';
-  // TODO: リファクタリングする
-  // @ViewChild('terminal', { static: true }) terminal!: ElementRef;
-
   term = new Terminal(xtermConsoleConfigOptions);
+  terminal: HTMLElement | null = null;
 
-  ngOnInit() {
-    const terminal = document.getElementById('terminal');
-    if (!terminal) {
-      console.log('failed to detect #terminal');
+  ngAfterViewInit(): void {
+    this.configTerminal();
+  }
+
+  private configTerminal() {
+    this.terminal = document.getElementById('terminal');
+    if (this.terminal) {
+      this.term.open(this.terminal);
+    } else {
       return;
     }
-
-    this.term.open(terminal);
 
     this.term.reset();
     this.term.write('$ ');
