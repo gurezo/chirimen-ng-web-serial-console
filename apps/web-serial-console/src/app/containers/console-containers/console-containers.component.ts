@@ -32,6 +32,21 @@ export class ConsoleContainersComponent implements OnInit {
     }
 
     term.open(terminal);
-    // term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ');
+    term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ');
+    term.write('\r\n$ ');
+    term.reset();
+
+    term.onKey((e) => {
+      console.log(e);
+      const ev = e.domEvent;
+      const printable = !ev.altKey && !ev.ctrlKey && !ev.metaKey;
+
+      if (ev.keyCode === 13) {
+      } else if (ev.keyCode === 8) {
+        term.write('\b \b');
+      } else if (printable) {
+        term.write(e.key);
+      }
+    });
   }
 }
