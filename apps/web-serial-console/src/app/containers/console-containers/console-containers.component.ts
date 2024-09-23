@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Terminal } from '@xterm/xterm';
-import { WebSerialService } from '../../shared';
+import { WebSerialService, xtermConsoleConfigOptions } from '../../shared';
 
 @Component({
   selector: 'app-console-containers',
@@ -16,36 +16,34 @@ export class ConsoleContainersComponent implements OnInit {
   service = inject(WebSerialService);
 
   label = 'connect';
+  // TODO: リファクタリングする
+  // @ViewChild('terminal', { static: true }) terminal!: ElementRef;
+
+  term = new Terminal(xtermConsoleConfigOptions);
 
   ngOnInit() {
-    const term = new Terminal({
-      cols: 80,
-      rows: 24,
-      cursorBlink: true, //カーソルの点滅
-      cursorStyle: 'underline', //カーソルをアンダーライン
-      cursorWidth: 2, //カーソルの太さ
-    });
     const terminal = document.getElementById('terminal');
     if (!terminal) {
       console.log('failed to detect #terminal');
       return;
     }
 
-    term.open(terminal);
-    term.reset();
-    term.write('$ ');
+    this.term.open(terminal);
 
-    term.onKey((e) => {
+    this.term.reset();
+    this.term.write('$ ');
+
+    this.term.onKey((e) => {
       console.log(e);
       const ev = e.domEvent;
       const printable = !ev.altKey && !ev.ctrlKey && !ev.metaKey;
 
       if (ev.keyCode === 13) {
-        term.write('\r\n$ ');
+        this.term.write('\r\n$ ');
       } else if (ev.keyCode === 8) {
-        term.write('\b \b');
+        this.term.write('\b \b');
       } else if (printable) {
-        term.write(e.key);
+        this.term.write(e.key);
       }
     });
   }
