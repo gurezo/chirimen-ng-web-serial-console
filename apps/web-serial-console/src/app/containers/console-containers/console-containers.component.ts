@@ -16,35 +16,35 @@ export class ConsoleContainersComponent implements AfterViewInit {
   service = inject(WebSerialService);
 
   label = 'connect';
-  term = new Terminal(xtermConsoleConfigOptions);
-  terminal: HTMLElement | null = null;
+  xterminal = new Terminal(xtermConsoleConfigOptions);
+  consoleDom: HTMLElement | null = null;
 
   ngAfterViewInit(): void {
     this.configTerminal();
   }
 
   private configTerminal() {
-    this.terminal = document.getElementById('terminal');
-    if (this.terminal) {
-      this.term.open(this.terminal);
+    this.consoleDom = document.getElementById('consoleDom');
+    if (this.consoleDom) {
+      this.xterminal.open(this.consoleDom);
     } else {
       return;
     }
 
-    this.term.reset();
-    this.term.write('$ ');
+    this.xterminal.reset();
+    this.xterminal.write('$ ');
 
-    this.term.onKey((e) => {
+    this.xterminal.onKey((e) => {
       console.log(e);
       const ev = e.domEvent;
       const printable = !ev.altKey && !ev.ctrlKey && !ev.metaKey;
 
       if (ev.code === 'Enter') {
-        this.term.write('\r\n$ ');
+        this.xterminal.write('\r\n$ ');
       } else if (ev.code === 'Backspace') {
-        this.term.write('\b \b');
+        this.xterminal.write('\b \b');
       } else if (printable) {
-        this.term.write(e.key);
+        this.xterminal.write(e.key);
       }
     });
   }
