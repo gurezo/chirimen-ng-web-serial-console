@@ -38,9 +38,9 @@ export class ConsoleContainersComponent implements OnInit {
       const ev = e.domEvent;
       const printable = !ev.altKey && !ev.ctrlKey && !ev.metaKey;
 
-      if (ev.keyCode === 13) {
+      if (ev.code === 'Enter') {
         this.term.write('\r\n$ ');
-      } else if (ev.keyCode === 8) {
+      } else if (ev.code === 'Backspace') {
         this.term.write('\b \b');
       } else if (printable) {
         this.term.write(e.key);
