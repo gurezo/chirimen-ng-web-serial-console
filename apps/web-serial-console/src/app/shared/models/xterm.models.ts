@@ -9,4 +9,7 @@ export const xtermConsoleConfigOptions: XtermConsoleConfigOptions = {
   cursorBlink: true, //カーソルの点滅
   cursorStyle: 'underline', //カーソルをアンダーライン
   cursorWidth: 2, //カーソルの太さ
+  theme: {
+    background: 'bkack',
+  },
 };
