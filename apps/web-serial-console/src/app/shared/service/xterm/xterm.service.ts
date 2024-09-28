@@ -5,7 +5,7 @@ import { Terminal } from '@xterm/xterm';
   providedIn: 'root',
 })
 export class XtermService {
-  onKey(xterminal: Terminal, e: any) {
+  onKey(xterminal: Terminal, e: { domEvent: KeyboardEvent }) {
     const ev = e.domEvent;
     const printable = !ev.altKey && !ev.ctrlKey && !ev.metaKey;
 
@@ -14,7 +14,7 @@ export class XtermService {
     } else if (ev.code === 'Backspace') {
       xterminal.write('\b \b');
     } else if (printable) {
-      xterminal.write(e.key);
+      xterminal.write(ev.key);
     }
   }
 }
