@@ -1,7 +1,11 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Terminal } from '@xterm/xterm';
-import { WebSerialService, xtermConsoleConfigOptions } from '../../shared';
+import {
+  WebSerialService,
+  xtermConsoleConfigOptions,
+  XtermService,
+} from '../../shared';
 
 @Component({
   selector: 'app-console-containers',
@@ -14,6 +18,7 @@ import { WebSerialService, xtermConsoleConfigOptions } from '../../shared';
 export class ConsoleContainersComponent implements AfterViewInit {
   store = inject(Store);
   service = inject(WebSerialService);
+  xtermService = inject(XtermService);
 
   label = 'connect';
   xterminal = new Terminal(xtermConsoleConfigOptions);
@@ -34,18 +39,6 @@ export class ConsoleContainersComponent implements AfterViewInit {
     this.xterminal.reset();
     this.xterminal.write('$ ');
 
-    this.xterminal.onKey((e) => {
-      console.log(e);
-      const ev = e.domEvent;
-      const printable = !ev.altKey && !ev.ctrlKey && !ev.metaKey;
-
-      if (ev.code === 'Enter') {
-        this.xterminal.write('\r\n$ ');
-      } else if (ev.code === 'Backspace') {
-        this.xterminal.write('\b \b');
-      } else if (printable) {
-        this.xterminal.write(e.key);
-      }
-    });
+    this.xterminal.onKey((e) => this.xtermService.onKey(this.xterminal, e));
   }
 }
