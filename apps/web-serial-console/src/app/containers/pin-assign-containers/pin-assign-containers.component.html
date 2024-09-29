@@ -1,34 +1,3 @@
-<div class="wrapper">
-  <div class="button">
-    <app-button [label]="'Back To Console'" routerLink="/" />
-    <app-button [label]="'Setup CHIRIMEN'" (clickEvent)="setUpChirimen()" />
-    <app-button [label]="'I2C Detect'" (clickEvent)="i2cDetect()" />
-    <app-button [label]="'Get Example'" (clickEvent)="getExample()" />
-    <app-button
-      [label]="'Resident App Conf'"
-      (clickEvent)="residentAppConf()"
-    />
-  </div>
-  <div>
-    @switch (mode) {
-      @case (pageMode.SETUP) {
-        <div>
-          <img src="wallpaperS.png" alt="" />
-        </div>
-      }
-      @case (pageMode.i2cDetect) {
-        <div>
-          <span> I2C Detect </span>
-        </div>
-      }
-      @case (pageMode.EXAMPLE) {
-        <div id="frame">
-          <app-example-frame />
-        </div>
-      }
-      @case (pageMode.RESIDENT) {
-        <span> I2C Detect </span>
-      }
-    }
-  </div>
+<div>
+  <img src="wallpaperS.png" alt="" />
 </div>
