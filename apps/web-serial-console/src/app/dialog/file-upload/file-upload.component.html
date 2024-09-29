@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <h2>ファイルをアップロード</h2>
+  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <input type="file" (change)="onFileSelected($event)" />
+
+    <div class="button-area">
+      <button type="submit">アップロード</button>
+      <button type="button" (click)="closeModal()">閉じる</button>
+    </div>
+  </form>
+</div>

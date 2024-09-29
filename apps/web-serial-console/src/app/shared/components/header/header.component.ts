@@ -22,4 +22,8 @@ export class HeaderComponent {
   openPinAssignDialog() {
     this.dailogService.openPinAssignDialog();
   }
+
+  openFileUploadDialog() {
+    this.dailogService.openFileUploadDialog();
+  }
 }
