@@ -1,6 +1,5 @@
-import { PinAssignComponent } from '../dialog/pin-assign/pin-assign.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 
-const dialogs = [FileUploadComponent, PinAssignComponent];
+const dialogs = [FileUploadComponent];
 
-export { dialogs, FileUploadComponent, PinAssignComponent };
+export { dialogs, FileUploadComponent };
