@@ -7,12 +7,34 @@
       <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
       <mat-menu #menu="matMenu">
         <button mat-menu-item disabled="{{ isNotSerialConnected }}">
-          <mat-icon>network_wifi</mat-icon>
+          <mat-icon>sync</mat-icon>
+          <span>Web Serial Connect</span>
+        </button>
+        <button mat-menu-item disabled="{{ isNotSerialConnected }}">
+          <!-- TODO: wifi の接続状態でアイコンを変える -->
+          <!-- <mat-icon>network_wifi</mat-icon> -->
+          <mat-icon>signal_wifi_off</mat-icon>
           <span>wifi-setting</span>
         </button>
         <button mat-menu-item disabled="{{ isNotSerialConnected }}">
           <mat-icon>fiber_pin</mat-icon>
           <span>pin-assign</span>
+        </button>
+        <button mat-menu-item disabled="{{ isNotSerialConnected }}">
+          <mat-icon>settings</mat-icon>
+          <span>Setup CHIRIMEN</span>
+        </button>
+        <button mat-menu-item disabled="{{ isNotSerialConnected }}">
+          <mat-icon>lan</mat-icon>
+          <span>I2C Detect</span>
+        </button>
+        <button mat-menu-item disabled="{{ isNotSerialConnected }}">
+          <mat-icon>upload</mat-icon>
+          <span>File Upload</span>
+        </button>
+        <button mat-menu-item disabled="{{ isNotSerialConnected }}">
+          <mat-icon>sync_disabled</mat-icon>
+          <span>Web Serial DisConnect</span>
         </button>
       </mat-menu>
     </div>
