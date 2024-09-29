@@ -11,13 +11,13 @@ const Mode = {
 type Mode = (typeof Mode)[keyof typeof Mode];
 
 @Component({
-  selector: 'app-pin-assign-containers',
+  selector: 'app-pin-assign',
   standalone: true,
   imports: [ButtonComponent, ExampleFrameComponent, RouterLink],
-  templateUrl: './pin-assign-containers.component.html',
-  styleUrl: './pin-assign-containers.component.scss',
+  templateUrl: './pin-assign.component.html',
+  styleUrl: './pin-assign.component.scss',
 })
-export class PinAssignContainersComponent {
+export class PinAssignComponent {
   pageMode = Mode;
   mode: string = Mode.SETUP;
 

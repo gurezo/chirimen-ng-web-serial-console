@@ -5,6 +5,6 @@ import { PinAssignContainersComponent } from '../../containers';
   selector: 'app-pin-assign',
   standalone: true,
   imports: [PinAssignContainersComponent],
-  template: `<app-pin-assign-containers />`,
+  template: `<app-pin-assign />`,
 })
 export default class PinAssignComponent {}
