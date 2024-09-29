@@ -32,7 +32,11 @@
           <mat-icon>lan</mat-icon>
           <span>I2C Detect</span>
         </button>
-        <button mat-menu-item disabled="{{ isNotSerialConnected }}">
+        <button
+          mat-menu-item
+          (click)="openFileUploadDialog()"
+          disabled="{{ isNotSerialConnected }}"
+        >
           <mat-icon>upload</mat-icon>
           <span>File Upload</span>
         </button>
