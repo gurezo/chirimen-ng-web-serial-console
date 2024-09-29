@@ -10,7 +10,20 @@
     </div>
     <mat-divider vertical />
     <div class="box2">
-      <router-outlet />
+      <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="Console">
+          <ng-template mat-tab-label>
+            <mat-icon>terminal</mat-icon>Console
+          </ng-template>
+          <app-console />
+        </mat-tab>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon>insert_drive_file</mat-icon>Editor
+          </ng-template>
+          <app-editor />
+        </mat-tab>
+      </mat-tab-group>
     </div>
   } @else {
     <div class="serial-connect">
