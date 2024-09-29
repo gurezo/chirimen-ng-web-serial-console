@@ -41,7 +41,7 @@ export default class LayoutMainComponent {
   store = inject(Store);
   service = inject(WebSerialService);
 
-  label = 'connect';
+  label = 'Web Serial Connect';
   isSerialConnected = true;
 
   ngOnInit() {

@@ -19,7 +19,7 @@
         </mat-tab>
         <mat-tab>
           <ng-template mat-tab-label>
-            <mat-icon>insert_drive_file</mat-icon>Editor
+            <mat-icon>description</mat-icon>Editor
           </ng-template>
           <app-editor />
         </mat-tab>
@@ -27,7 +27,9 @@
     </div>
   } @else {
     <div class="serial-connect">
-      <h2>connect ボタンをクリックして、Web Serail を接続して下さい</h2>
+      <h2>
+        Web Serial Connect ボタンをクリックして、Web Serail を接続して下さい
+      </h2>
       <app-button [label]="label" (clickEvent)="onClick()" />
     </div>
   }
