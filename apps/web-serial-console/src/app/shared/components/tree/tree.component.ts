@@ -2,6 +2,7 @@ import { CdkTreeModule } from '@angular/cdk/tree';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {
@@ -275,9 +276,10 @@ class ComplexDataStore {
   standalone: true,
   imports: [
     CdkTreeModule,
-    MatButtonModule,
-    MatIconModule,
     CommonModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule,
     MatProgressSpinnerModule,
   ],
   templateUrl: './tree.component.html',

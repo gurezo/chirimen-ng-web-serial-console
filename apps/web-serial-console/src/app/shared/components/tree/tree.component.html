@@ -1,6 +1,8 @@
 @if (areRootsLoading | async) {
   <mat-spinner></mat-spinner>
 } @else {
+  <h3>Pi Zero Directory</h3>
+  <mat-divider />
   <cdk-tree
     #tree
     [dataSource]="roots"
