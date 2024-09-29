@@ -6,14 +6,14 @@ import { provideRouterStore } from '@ngrx/router-store';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideMonacoEditor } from 'ngx-monaco-editor-v2';
+import { routes } from './app.routes';
+import { monacoConfig } from './constants';
 import {
   webSerialFeatureKey,
   webSerialReducer,
   xtermFeatureKey,
   xtermReducer,
-} from '../app/shared/store';
-import { routes } from './app.routes';
-import { monacoConfig } from './shared';
+} from './store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
