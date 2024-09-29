@@ -1,7 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
+import {
+  ConsoleContainersComponent,
+  EditorContainersComponent,
+} from '../../containers';
+import ConsoleComponent from '../../pages/console/console.component';
+import EditorComponent from '../../pages/editor/editor.component';
 import {
   BreadcombComponent,
   ButtonComponent,
@@ -16,9 +24,15 @@ import {
   imports: [
     BreadcombComponent,
     ButtonComponent,
+    ConsoleContainersComponent,
+    EditorContainersComponent,
     MatDividerModule,
+    MatIconModule,
+    MatTabsModule,
     TreeComponent,
     RouterOutlet,
+    ConsoleComponent,
+    EditorComponent,
   ],
   templateUrl: './layout-main.component.html',
   styleUrl: './layout-main.component.scss',
