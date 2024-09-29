@@ -1,7 +1,7 @@
 import { Dialog } from '@angular/cdk/dialog';
 import { inject, Injectable } from '@angular/core';
-import { FileUploadComponent } from '../../../dialog';
 import { PinAssignComponent } from '../../components';
+import { FileUploadComponent } from '../../dialog';
 
 @Injectable({
   providedIn: 'root',

@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './shared/components/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',

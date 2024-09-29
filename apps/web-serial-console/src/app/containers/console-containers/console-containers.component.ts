@@ -1,11 +1,8 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Terminal } from '@xterm/xterm';
-import {
-  WebSerialService,
-  xtermConsoleConfigOptions,
-  XtermService,
-} from '../../shared';
+import { xtermConsoleConfigOptions } from '../../models';
+import { WebSerialService, XtermService } from '../../service';
 
 @Component({
   selector: 'app-console-containers',

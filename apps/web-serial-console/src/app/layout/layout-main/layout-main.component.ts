@@ -5,19 +5,19 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
+  BreadcombComponent,
+  ButtonComponent,
+  PinAssignComponent,
+  TreeComponent,
+} from '../../components';
+import {
   ConsoleContainersComponent,
   EditorContainersComponent,
 } from '../../containers';
 import ConsoleComponent from '../../pages/console/console.component';
 import EditorComponent from '../../pages/editor/editor.component';
-import {
-  BreadcombComponent,
-  ButtonComponent,
-  PinAssignComponent,
-  TreeComponent,
-  WebSerialActions,
-  WebSerialService,
-} from '../../shared';
+import { WebSerialService } from '../../service';
+import { WebSerialActions } from '../../store';
 
 @Component({
   selector: 'app-layout-main',
