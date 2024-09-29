@@ -1,14 +1,3 @@
-h1 {
-  font-size: 1em;
-  color: #333;
-  text-align: center;
-}
-
-#terminal {
-  height: 100%;
-  width: 100%;
-  flex-grow: 1;
-  overflow: auto;
-  min-height: 67vh;
-  max-width: 79vw;
+#consoleDom {
+  margin-top: 8px;
 }
