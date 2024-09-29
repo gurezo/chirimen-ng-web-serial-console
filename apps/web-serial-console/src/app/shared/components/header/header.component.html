@@ -16,7 +16,11 @@
           <mat-icon>signal_wifi_off</mat-icon>
           <span>wifi-setting</span>
         </button>
-        <button mat-menu-item disabled="{{ isNotSerialConnected }}">
+        <button
+          mat-menu-item
+          (click)="openPinAssignDialog()"
+          disabled="{{ isNotSerialConnected }}"
+        >
           <mat-icon>fiber_pin</mat-icon>
           <span>pin-assign</span>
         </button>

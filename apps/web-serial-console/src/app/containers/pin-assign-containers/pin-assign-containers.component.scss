@@ -1,31 +1,11 @@
-.wrapper {
+div {
   background-color: white;
-  display: flex; /* フレックスボックスを有効にする */
-  flex-direction: column;
-  text-align: center;
-  gap: 1rem;
-  margin-top: 32px;
-  justify-content: center; /* 縦方向で中央寄せ */
-  align-items: center; /* 横方向で中央寄せ */
-}
-
-#frame {
-  border: 1px solid black;
-  text-align: center;
-  height: 100%;
-}
-
-.button {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* ボタン間のスペースを均等に配置 */
-  width: 100%; /* ボタンを横方向でフル幅にする */
-  max-width: 1024px; /* 最大幅を設定してボタンが横に広がりすぎないようにする */
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
-app-button {
-  flex: 1; /* ボタンを均等に広げる */
-  margin: 0 1rem; /* 両側に余白を追加 */
-  min-width: 150px; /* 適宜調整 */
+img {
+  max-width: 100%;
+  max-height: 100%;
 }

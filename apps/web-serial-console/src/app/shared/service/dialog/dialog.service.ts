@@ -10,8 +10,8 @@ export class DialogService {
 
   openPinAssignDialog() {
     this.dialog.open(PinAssignContainersComponent, {
-      height: '400px',
-      width: '600px',
+      height: '654px',
+      width: '546px',
       panelClass: 'my-dialog',
     });
   }
