@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { DialogService } from '../../service/dialog/dialog.service';
 
 @Component({
   selector: 'app-file-upload',
@@ -9,6 +10,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './file-upload.component.scss',
 })
 export class FileUploadComponent {
+  private service = inject(DialogService);
   uploadForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -33,6 +35,6 @@ export class FileUploadComponent {
   }
 
   closeModal(): void {
-    // モーダルを閉じるロジック（OverlayRef を利用）
+    this.service.closeDialog();
   }
 }

@@ -24,4 +24,8 @@ export class DialogService {
       panelClass: 'my-dialog',
     });
   }
+
+  closeDialog() {
+    this.dialog.closeAll();
+  }
 }
