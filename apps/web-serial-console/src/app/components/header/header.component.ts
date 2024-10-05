@@ -30,4 +30,8 @@ export class HeaderComponent {
   openI2CDetectDialog() {
     this.dailogService.openI2CDetectDialog();
   }
+
+  openSetupChirimenDialog() {
+    this.dailogService.openSetupChirimenDialog();
+  }
 }

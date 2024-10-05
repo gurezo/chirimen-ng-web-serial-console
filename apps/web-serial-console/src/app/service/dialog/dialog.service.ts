@@ -1,7 +1,11 @@
 import { Dialog } from '@angular/cdk/dialog';
 import { inject, Injectable } from '@angular/core';
 import { PinAssignComponent } from '../../components';
-import { FileUploadComponent, I2cdetectComponent } from '../../dialog';
+import {
+  ChirimenSetupComponent,
+  FileUploadComponent,
+  I2cdetectComponent,
+} from '../../dialog';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +31,14 @@ export class DialogService {
 
   openI2CDetectDialog() {
     this.dialog.open(I2cdetectComponent, {
+      height: '320px',
+      width: '420px',
+      panelClass: 'my-dialog',
+    });
+  }
+
+  openSetupChirimenDialog() {
+    this.dialog.open(ChirimenSetupComponent, {
       height: '320px',
       width: '420px',
       panelClass: 'my-dialog',
