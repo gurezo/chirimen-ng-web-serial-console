@@ -25,7 +25,7 @@ export class DialogService {
     });
   }
 
-  openI2CDetectialog() {
+  openI2CDetectDialog() {
     this.dialog.open(I2cdetectComponent, {
       height: '320px',
       width: '420px',

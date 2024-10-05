@@ -27,7 +27,7 @@ export class HeaderComponent {
     this.dailogService.openFileUploadDialog();
   }
 
-  openI2CDetectialog() {
-    this.dailogService.openI2CDetectialog();
+  openI2CDetectDialog() {
+    this.dailogService.openI2CDetectDialog();
   }
 }
