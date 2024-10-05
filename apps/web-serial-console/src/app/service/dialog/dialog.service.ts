@@ -1,7 +1,7 @@
 import { Dialog } from '@angular/cdk/dialog';
 import { inject, Injectable } from '@angular/core';
 import { PinAssignComponent } from '../../components';
-import { FileUploadComponent } from '../../dialog';
+import { FileUploadComponent, I2cdetectComponent } from '../../dialog';
 
 @Injectable({
   providedIn: 'root',
@@ -21,6 +21,14 @@ export class DialogService {
     this.dialog.open(FileUploadComponent, {
       height: '300px',
       width: '500px',
+      panelClass: 'my-dialog',
+    });
+  }
+
+  openI2CDetectialog() {
+    this.dialog.open(I2cdetectComponent, {
+      height: '320px',
+      width: '420px',
       panelClass: 'my-dialog',
     });
   }

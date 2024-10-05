@@ -28,7 +28,11 @@
           <mat-icon>settings</mat-icon>
           <span>Setup CHIRIMEN</span>
         </button>
-        <button mat-menu-item disabled="{{ isNotSerialConnected }}">
+        <button
+          mat-menu-item
+          (click)="openI2CDetectialog()"
+          disabled="{{ isNotSerialConnected }}"
+        >
           <mat-icon>lan</mat-icon>
           <span>I2C Detect</span>
         </button>
