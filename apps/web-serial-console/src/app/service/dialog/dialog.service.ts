@@ -48,8 +48,8 @@ export class DialogService {
 
   openExampleFrameDialog() {
     this.dialog.open(ExampleFrameComponent, {
-      height: '320px',
-      width: '420px',
+      height: '800px',
+      width: '1000px',
       panelClass: 'my-dialog',
     });
   }
