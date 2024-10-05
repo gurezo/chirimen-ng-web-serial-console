@@ -26,6 +26,14 @@
         </button>
         <button
           mat-menu-item
+          (click)="openExampleFrameDialog()"
+          disabled="{{ isNotSerialConnected }}"
+        >
+          <mat-icon>javascript</mat-icon>
+          <span>Get Example</span>
+        </button>
+        <button
+          mat-menu-item
           (click)="openSetupChirimenDialog()"
           disabled="{{ isNotSerialConnected }}"
         >
