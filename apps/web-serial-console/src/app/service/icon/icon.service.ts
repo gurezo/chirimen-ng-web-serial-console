@@ -1,0 +1,42 @@
+import { inject, Injectable } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class IconService {
+  private domSanitizer = inject(DomSanitizer);
+  private matIconRegistry = inject(MatIconRegistry);
+
+  registIcons() {
+    this.matIconRegistry.addSvgIcon(
+      'terminal',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/terminal.png'),
+    );
+    this.matIconRegistry.addSvgIcon(
+      'upload',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/upload.png'),
+    );
+    this.matIconRegistry.addSvgIcon(
+      'settings',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/settings.png'),
+    );
+    this.matIconRegistry.addSvgIcon(
+      'sync',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/sync.png'),
+    );
+    this.matIconRegistry.addSvgIcon(
+      'sync_disabled',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/sync_disabled.png'),
+    );
+    this.matIconRegistry.addSvgIcon(
+      'lan',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/lan.png'),
+    );
+    this.matIconRegistry.addSvgIcon(
+      'javascript',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/javascript.png'),
+    );
+  }
+}
