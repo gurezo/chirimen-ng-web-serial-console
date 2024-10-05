@@ -5,6 +5,6 @@ import { WifiSettingContainersComponent } from '../../containers';
   selector: 'app-wifi-setting',
   standalone: true,
   imports: [WifiSettingContainersComponent],
-  template: `<app-wifi-setting-containers />`,
+  template: `<app-wifi-setting />`,
 })
 export default class WifiSettingComponent {}
