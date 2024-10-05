@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { PinAssignComponent } from '../../components';
 import {
   ChirimenSetupComponent,
+  ExampleFrameComponent,
   FileUploadComponent,
   I2cdetectComponent,
 } from '../../dialog';
@@ -39,6 +40,14 @@ export class DialogService {
 
   openSetupChirimenDialog() {
     this.dialog.open(ChirimenSetupComponent, {
+      height: '320px',
+      width: '420px',
+      panelClass: 'my-dialog',
+    });
+  }
+
+  openExampleFrameDialog() {
+    this.dialog.open(ExampleFrameComponent, {
       height: '320px',
       width: '420px',
       panelClass: 'my-dialog',

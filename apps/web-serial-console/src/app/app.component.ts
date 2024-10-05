@@ -41,5 +41,9 @@ export class AppComponent implements OnInit {
       'lan',
       this.domSanitizer.bypassSecurityTrustResourceUrl('/lan.png'),
     );
+    this.matIconRegistry.addSvgIcon(
+      'javascript',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/javascript.png'),
+    );
   }
 }

@@ -34,4 +34,8 @@ export class HeaderComponent {
   openSetupChirimenDialog() {
     this.dailogService.openSetupChirimenDialog();
   }
+
+  openExampleFrameDialog() {
+    this.dailogService.openExampleFrameDialog();
+  }
 }
