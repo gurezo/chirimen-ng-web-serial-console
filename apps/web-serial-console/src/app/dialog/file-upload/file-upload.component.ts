@@ -11,12 +11,11 @@ import { DialogService } from '../../service/dialog/dialog.service';
 })
 export class FileUploadComponent {
   private service = inject(DialogService);
+  private fb = inject(FormBuilder);
   uploadForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.uploadForm = this.fb.group({
-      file: [null],
-    });
+  constructor() {
+    this.uploadForm = this.fb.group({ file: [null] });
   }
 
   onFileSelected(event: any): void {
