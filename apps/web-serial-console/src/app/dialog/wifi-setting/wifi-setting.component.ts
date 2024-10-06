@@ -1,13 +1,21 @@
 import { NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { WifiInfoComponent } from '../../components/wifi-info/wifi-info.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
+import { ButtonComponent, WifiInfoComponent } from '../../components';
 import { dummyWiFiInformation } from '../../models';
 import { DialogService } from '../../service/dialog/dialog.service';
 
 @Component({
   selector: 'app-wifi-setting',
   standalone: true,
-  imports: [WifiInfoComponent, NgFor],
+  imports: [
+    ButtonComponent,
+    WifiInfoComponent,
+    MatDividerModule,
+    NgFor,
+    ReactiveFormsModule,
+  ],
   templateUrl: './wifi-setting.component.html',
   styleUrl: './wifi-setting.component.scss',
 })

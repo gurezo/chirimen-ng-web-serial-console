@@ -7,7 +7,21 @@
       <app-wifi-info [wifiInfo]="wifiInfo" />
     </div>
   </div>
+  <mat-divider />
+  <div>
+    <form action="">
+      <label for="ssid">SSID:</label>
+      <input type="text" id="ssid" name="ssid" />
+      <label for="password">Password:</label>
+      <input type="text" id="password" name="password" />
+    </form>
+  </div>
+  <mat-divider />
   <div class="button-area">
-    <button type="button" (click)="closeModal()">閉じる</button>
+    <app-button [label]="'Wifi Scan'" type="button" />
+    <app-button [label]="'Wifi Info'" type="button" />
+    <app-button [label]="'Reset Wifi'" type="button" />
+    <app-button [label]="'Reboot'" type="button" />
+    <app-button [label]="'閉じる'" type="button" (clickEvent)="closeModal()" />
   </div>
 </div>
