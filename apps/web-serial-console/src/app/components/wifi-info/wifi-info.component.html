@@ -1,8 +1,14 @@
-<span>{{ wifiIfo.SSID }}</span>
-<ul>
-  <li>{{ wifiIfo.address }}</li>
-  <li>{{ wifiIfo.channel }}</li>
-  <li>{{ wifiIfo.frequency }}</li>
-  <li>{{ wifiIfo.quality }}</li>
-  <li>{{ wifiIfo.spec }}</li>
-</ul>
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>SSID: {{ wifiInfo.SSID }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ul>
+      <li>address: {{ wifiInfo.address }}</li>
+      <li>channel: {{ wifiInfo.channel }}</li>
+      <li>frequency: {{ wifiInfo.frequency }}</li>
+      <li>quality: {{ wifiInfo.quality }}</li>
+      <li>spec: {{ wifiInfo.spec }}</li>
+    </ul>
+  </mat-card-content>
+</mat-card>

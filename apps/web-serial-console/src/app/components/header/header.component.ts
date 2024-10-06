@@ -38,4 +38,8 @@ export class HeaderComponent {
   openExampleFrameDialog() {
     this.dailogService.openExampleFrameDialog();
   }
+
+  openWifiSettingDialog() {
+    this.dailogService.openWifiSettingDialog();
+  }
 }

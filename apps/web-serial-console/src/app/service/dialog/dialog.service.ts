@@ -6,6 +6,7 @@ import {
   ExampleFrameComponent,
   FileUploadComponent,
   I2cdetectComponent,
+  WifiSettingComponent,
 } from '../../dialog';
 
 @Injectable({
@@ -50,6 +51,14 @@ export class DialogService {
     this.dialog.open(ExampleFrameComponent, {
       height: '800px',
       width: '1000px',
+      panelClass: 'my-dialog',
+    });
+  }
+
+  openWifiSettingDialog() {
+    this.dialog.open(WifiSettingComponent, {
+      height: '800px',
+      width: '600px',
       panelClass: 'my-dialog',
     });
   }

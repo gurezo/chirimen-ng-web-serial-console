@@ -1,14 +1,14 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { WiFiInformation } from '../../models';
 
 @Component({
   selector: 'app-wifi-info',
   standalone: true,
-  imports: [CommonModule],
+  imports: [MatCardModule],
   templateUrl: './wifi-info.component.html',
   styleUrl: './wifi-info.component.scss',
 })
 export class WifiInfoComponent {
-  @Input() wifiIfo!: WiFiInformation;
+  @Input() wifiInfo!: WiFiInformation;
 }
