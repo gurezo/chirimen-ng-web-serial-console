@@ -57,7 +57,6 @@ export class DialogService {
 
   openWifiSettingDialog() {
     this.dialog.open(WifiSettingComponent, {
-      height: '800px',
       width: '600px',
       panelClass: 'my-dialog',
     });
