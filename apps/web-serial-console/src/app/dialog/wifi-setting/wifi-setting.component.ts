@@ -5,6 +5,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ButtonComponent, WifiInfoComponent } from '../../components';
 import { dummyWiFiInformation } from '../../models';
 import { DialogService } from '../../service/dialog/dialog.service';
+// import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-wifi-setting',
@@ -13,6 +16,8 @@ import { DialogService } from '../../service/dialog/dialog.service';
     ButtonComponent,
     WifiInfoComponent,
     MatDividerModule,
+    MatFormFieldModule,
+    MatInputModule,
     NgFor,
     ReactiveFormsModule,
   ],
