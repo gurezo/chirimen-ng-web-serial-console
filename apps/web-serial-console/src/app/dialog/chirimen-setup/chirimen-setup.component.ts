@@ -1,5 +1,6 @@
 import { Component, inject, ViewChild } from '@angular/core';
 import { MatTable, MatTableModule } from '@angular/material/table';
+import { ButtonComponent } from '../../components';
 import { DialogService } from '../../service/dialog/dialog.service';
 
 export interface PeriodicElement {
@@ -18,7 +19,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-chirimen-setup',
   standalone: true,
-  imports: [MatTable, MatTableModule],
+  imports: [ButtonComponent, MatTable, MatTableModule],
   templateUrl: './chirimen-setup.component.html',
   styleUrl: './chirimen-setup.component.scss',
 })

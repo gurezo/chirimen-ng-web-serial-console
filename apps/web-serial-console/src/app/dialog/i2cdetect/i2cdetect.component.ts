@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { ButtonComponent } from '../../components';
 import { DialogService } from '../../service/dialog/dialog.service';
 
 @Component({
   selector: 'app-i2cdetect',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ButtonComponent],
   templateUrl: './i2cdetect.component.html',
   styleUrl: './i2cdetect.component.scss',
 })

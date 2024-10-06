@@ -4,8 +4,12 @@
     <input type="file" (change)="onFileSelected($event)" />
 
     <div class="button-area">
-      <button type="submit">アップロード</button>
-      <button type="button" (click)="closeModal()">閉じる</button>
+      <app-button [label]="'アップロード'" type="button" />
+      <app-button
+        [label]="'閉じる'"
+        type="button"
+        (clickEvent)="closeModal()"
+      />
     </div>
   </form>
 </div>
