@@ -15,12 +15,12 @@
   align-items: center;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-height: 58vh; /* 高さの上限を指定して、中央に収める */
+  max-height: 90vh; /* 高さの上限を指定して、中央に収める */
   width: 95%; /* 必要に応じて横幅を調整 */
 }
 
 .wifi-list {
-  max-height: 400px; /* WiFiリスト部分の高さを制限 */
+  max-height: 620px; /* 2つ分の高さに固定 */
   overflow-y: auto;
   width: 100%;
 }
@@ -38,10 +38,6 @@ mat-form-field {
 app-button {
   margin-right: 10px;
 }
-
-// app-button:last-child {
-//   margin-right: 0;
-// }
 
 .button-area {
   display: flex;

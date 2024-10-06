@@ -3,9 +3,11 @@
     <h3>WiFi Scan Result</h3>
   </div>
   <div class="wifi-list">
-    <div *ngFor="let wifiInfo of wifiInfoList">
+    @for (wifiInfo of wifiInfoList; track wifiInfo.SSID) {
       <app-wifi-info [wifiInfo]="wifiInfo" />
-    </div>
+    } @empty {
+      <span> There are no Wi-Fi Information </span>
+    }
   </div>
   <mat-divider />
   <div>
