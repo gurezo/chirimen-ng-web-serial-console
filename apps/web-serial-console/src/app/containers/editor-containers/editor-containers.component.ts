@@ -20,7 +20,24 @@ export class EditorContainersComponent implements OnInit {
     automaticLayout: true,
   };
 
-  code: string = 'function x() {\nconsole.log("Hello world!");\n}';
+  // code: string = 'function x() {\nconsole.log("Hello world!");\n}';
+
+  code: string = `
+    onload = async function () {
+      window.addEventListener("message", receiveMessage, false);
+      portWritelnWaitfor = window.opener.portWritelnWaitfor;
+      getOutputLines = function (inp) {
+        var ret = window.opener.getOutputLines(inp);
+        console.log(ret);
+        return ret;
+      };
+      cmdPrompt = window.opener.cmdPrompt;
+      mv = window.opener.mv;
+      cp = window.opener.cp;
+      showDir = window.opener.showDir;
+    };
+    const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
+`;
 
   ngOnInit(): void {
     // let line = editor.getPosition();
