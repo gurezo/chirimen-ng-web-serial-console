@@ -1,22 +1,8 @@
+<app-editor-tool-bar />
 <div>
-  <div class="button-area">
-    <!-- ボタン群 -->
-    <app-button
-      [label]="'load file'"
-      (clickEvent)="loadFile()"
-      [color]="'primary'"
-    />
-    <app-button [label]="'save file'" (clickEvent)="save()" />
-    <app-button [label]="'new file'" (clickEvent)="create()" />
-    <app-button [label]="'delete file'" (clickEvent)="delete()" />
-    <app-button [label]="'rename file'" (clickEvent)="rename()" />
-  </div>
-  <div>
-    <!-- エディター -->
-    <ngx-monaco-editor
-      class="my-code-editor"
-      [options]="editorOptions"
-      [(ngModel)]="code"
-    />
-  </div>
+  <ngx-monaco-editor
+    class="my-code-editor"
+    [options]="editorOptions"
+    [(ngModel)]="code"
+  />
 </div>
