@@ -4,11 +4,12 @@ import { Terminal } from '@xterm/xterm';
 import { ConsoleToolBarComponent } from '../../components';
 import { xtermConsoleConfigOptions } from '../../models';
 import { WebSerialService, XtermService } from '../../service';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-console-containers',
   standalone: true,
-  imports: [ConsoleToolBarComponent],
+  imports: [ConsoleToolBarComponent, MatDividerModule],
   templateUrl: './console-containers.component.html',
   styleUrl: './console-containers.component.scss',
   providers: [WebSerialService],
