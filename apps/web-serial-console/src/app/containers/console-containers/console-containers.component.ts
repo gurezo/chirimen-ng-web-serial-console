@@ -1,13 +1,14 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Terminal } from '@xterm/xterm';
+import { ConsoleToolBarComponent } from '../../components';
 import { xtermConsoleConfigOptions } from '../../models';
 import { WebSerialService, XtermService } from '../../service';
 
 @Component({
   selector: 'app-console-containers',
   standalone: true,
-  imports: [],
+  imports: [ConsoleToolBarComponent],
   templateUrl: './console-containers.component.html',
   styleUrl: './console-containers.component.scss',
   providers: [WebSerialService],
