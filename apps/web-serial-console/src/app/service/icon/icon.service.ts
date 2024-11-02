@@ -38,5 +38,9 @@ export class IconService {
       'javascript',
       this.domSanitizer.bypassSecurityTrustResourceUrl('/javascript.png'),
     );
+    this.matIconRegistry.addSvgIcon(
+      'save_sa',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/save_as.png'),
+    );
   }
 }
