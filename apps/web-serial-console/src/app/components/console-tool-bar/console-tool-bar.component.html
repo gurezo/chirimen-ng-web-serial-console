@@ -1,17 +1,17 @@
 <div class="tool-bar">
-  <button mat-menu-item>
+  <button mat-menu-item (click)="eventGetExample.emit()">
     <mat-icon>javascript</mat-icon>
     <span>Get Example</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="eventSetupChirimen.emit()">
     <mat-icon>settings</mat-icon>
     <span>Setup CHIRIMEN</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="eventI2CDetect.emit()">
     <mat-icon>lan</mat-icon>
     <span>I2C Detect</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="eventFileUpload.emit()">
     <mat-icon>upload</mat-icon>
     <span>File Upload</span>
   </button>

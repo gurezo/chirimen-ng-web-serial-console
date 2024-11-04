@@ -1,2 +1,7 @@
-<app-console-tool-bar />
+<app-console-tool-bar
+  (eventGetExample)="openExampleFrameDialog()"
+  (eventSetupChirimen)="openSetupChirimenDialog()"
+  (eventI2CDetect)="openI2CDetectDialog()"
+  (eventFileUpload)="openFileUploadDialog()"
+/>
 <div id="consoleDom"></div>

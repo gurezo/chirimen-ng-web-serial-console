@@ -23,22 +23,6 @@ export class HeaderComponent {
     this.dailogService.openPinAssignDialog();
   }
 
-  openFileUploadDialog() {
-    this.dailogService.openFileUploadDialog();
-  }
-
-  openI2CDetectDialog() {
-    this.dailogService.openI2CDetectDialog();
-  }
-
-  openSetupChirimenDialog() {
-    this.dailogService.openSetupChirimenDialog();
-  }
-
-  openExampleFrameDialog() {
-    this.dailogService.openExampleFrameDialog();
-  }
-
   openWifiSettingDialog() {
     this.dailogService.openWifiSettingDialog();
   }

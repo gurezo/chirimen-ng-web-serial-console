@@ -1,10 +1,12 @@
+import { Dialog } from '@angular/cdk/dialog';
 import { AfterViewInit, Component, inject } from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
 import { Store } from '@ngrx/store';
 import { Terminal } from '@xterm/xterm';
 import { ConsoleToolBarComponent } from '../../components';
 import { xtermConsoleConfigOptions } from '../../models';
 import { WebSerialService, XtermService } from '../../service';
-import { MatDividerModule } from '@angular/material/divider';
+import { DialogService } from '../../service/dialog/dialog.service';
 
 @Component({
   selector: 'app-console-containers',
@@ -18,6 +20,8 @@ export class ConsoleContainersComponent implements AfterViewInit {
   store = inject(Store);
   service = inject(WebSerialService);
   xtermService = inject(XtermService);
+  dailogService = inject(DialogService);
+  dialog = inject(Dialog);
 
   label = 'connect';
   xterminal = new Terminal(xtermConsoleConfigOptions);
@@ -25,6 +29,21 @@ export class ConsoleContainersComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.configTerminal();
+  }
+
+  openExampleFrameDialog() {
+    this.dailogService.openExampleFrameDialog();
+  }
+
+  openSetupChirimenDialog() {
+    this.dailogService.openSetupChirimenDialog();
+  }
+  openI2CDetectDialog() {
+    this.dailogService.openI2CDetectDialog();
+  }
+
+  openFileUploadDialog() {
+    this.dailogService.openFileUploadDialog();
   }
 
   private configTerminal() {

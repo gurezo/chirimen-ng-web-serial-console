@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -10,4 +10,9 @@ import { MatMenuModule } from '@angular/material/menu';
   templateUrl: './console-tool-bar.component.html',
   styleUrl: './console-tool-bar.component.scss',
 })
-export class ConsoleToolBarComponent {}
+export class ConsoleToolBarComponent {
+  @Output() eventGetExample = new EventEmitter<void>();
+  @Output() eventSetupChirimen = new EventEmitter<void>();
+  @Output() eventI2CDetect = new EventEmitter<void>();
+  @Output() eventFileUpload = new EventEmitter<void>();
+}
