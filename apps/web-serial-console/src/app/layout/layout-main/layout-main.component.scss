@@ -38,16 +38,11 @@ mat-divider {
   grid-column-start: 1;
   grid-column-end: 5;
   text-align: center;
-  height: auto;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-}
-
-.serial-connect h2 {
-  margin-bottom: 16px;
 }
 
 app-pin-assign {

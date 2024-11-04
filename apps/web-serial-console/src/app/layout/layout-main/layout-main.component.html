@@ -1,5 +1,5 @@
-<div class="wrapper">
-  @if (isSerialConnected) {
+@if (isSerialConnected) {
+  <div class="wrapper">
     <div class="box1">
       <!-- パンくず -->
       <app-breadcomb />
@@ -31,12 +31,12 @@
         </mat-tab>
       </mat-tab-group>
     </div>
-  } @else {
-    <div class="serial-connect">
-      <h2>
-        Web Serial Connect ボタンをクリックして、Web Serail を接続して下さい
-      </h2>
-      <app-button [label]="label" (clickEvent)="onClick()" />
-    </div>
-  }
-</div>
+  </div>
+} @else {
+  <div class="serial-connect">
+    <h2>
+      Web Serial Connect ボタンをクリックして、Web Serail を接続して下さい
+    </h2>
+    <app-button [label]="label" (clickEvent)="onClick()" />
+  </div>
+}
