@@ -18,12 +18,4 @@ export class HeaderComponent {
 
   isSerialConnected = true;
   isNotSerialConnected = !this.isSerialConnected;
-
-  openPinAssignDialog() {
-    this.dailogService.openPinAssignDialog();
-  }
-
-  openWifiSettingDialog() {
-    this.dailogService.openWifiSettingDialog();
-  }
 }

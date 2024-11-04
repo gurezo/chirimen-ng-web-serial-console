@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
   styleUrl: './console-tool-bar.component.scss',
 })
 export class ConsoleToolBarComponent {
+  @Output() eventWiFiSetting = new EventEmitter<void>();
   @Output() eventGetExample = new EventEmitter<void>();
   @Output() eventSetupChirimen = new EventEmitter<void>();
   @Output() eventI2CDetect = new EventEmitter<void>();

@@ -1,4 +1,10 @@
 <div class="tool-bar">
+  <button mat-menu-item (click)="eventWiFiSetting.emit()">
+    <!-- TODO: wifi の接続状態でアイコンを変える -->
+    <!-- <mat-icon>network_wifi</mat-icon> -->
+    <mat-icon>signal_wifi_off</mat-icon>
+    <span>wifi-setting</span>
+  </button>
   <button mat-menu-item (click)="eventGetExample.emit()">
     <mat-icon>javascript</mat-icon>
     <span>Get Example</span>

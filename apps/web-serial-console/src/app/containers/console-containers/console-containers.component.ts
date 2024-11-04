@@ -31,6 +31,10 @@ export class ConsoleContainersComponent implements AfterViewInit {
     this.configTerminal();
   }
 
+  openWifiSettingDialog() {
+    this.dailogService.openWifiSettingDialog();
+  }
+
   openExampleFrameDialog() {
     this.dailogService.openExampleFrameDialog();
   }
