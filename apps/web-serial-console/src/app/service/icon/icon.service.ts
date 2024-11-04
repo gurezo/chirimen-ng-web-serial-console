@@ -42,5 +42,9 @@ export class IconService {
       'save_sa',
       this.domSanitizer.bypassSecurityTrustResourceUrl('/save_as.png'),
     );
+    this.matIconRegistry.addSvgIcon(
+      'file_open',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/file_open.png'),
+    );
   }
 }
