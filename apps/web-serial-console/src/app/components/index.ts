@@ -3,6 +3,7 @@ export * from './button/button.component';
 export * from './console-tool-bar/console-tool-bar.component';
 export * from './editor-tool-bar/editor-tool-bar.component';
 export * from './example-item/example-item.component';
+export * from './example-list/example-list.component';
 export * from './pin-assign/pin-assign.component';
 export * from './tree/tree.component';
 export * from './wifi-info/wifi-info.component';
