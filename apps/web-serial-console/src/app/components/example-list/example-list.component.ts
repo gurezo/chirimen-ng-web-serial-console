@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { ExampleItemComponent } from '../example-item/example-item.component';
 
 @Component({
   selector: 'app-example-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ExampleItemComponent],
   templateUrl: './example-list.component.html',
   styleUrl: './example-list.component.scss',
 })
-export class ExampleListComponent {}
+export class ExampleListComponent {
+  @Input() examples: string[] = [];
+}
