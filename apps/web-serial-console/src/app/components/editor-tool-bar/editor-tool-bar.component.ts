@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -10,4 +10,10 @@ import { MatMenuModule } from '@angular/material/menu';
   templateUrl: './editor-tool-bar.component.html',
   styleUrl: './editor-tool-bar.component.scss',
 })
-export class EditorToolBarComponent {}
+export class EditorToolBarComponent {
+  @Output() eventOpenFile = new EventEmitter<void>();
+  @Output() eventSaveFile = new EventEmitter<void>();
+  @Output() eventCreateFile = new EventEmitter<void>();
+  @Output() eventDeleteFile = new EventEmitter<void>();
+  @Output() eventRenameFile = new EventEmitter<void>();
+}

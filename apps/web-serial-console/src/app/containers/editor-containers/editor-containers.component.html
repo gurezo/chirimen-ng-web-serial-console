@@ -1,4 +1,10 @@
-<app-editor-tool-bar />
+<app-editor-tool-bar
+  (eventOpenFile)="openFile()"
+  (eventSaveFile)="saveFile()"
+  (eventCreateFile)="createFile()"
+  (eventDeleteFile)="deleteFile()"
+  (eventRenameFile)="renameFile()"
+/>
 <div>
   <ngx-monaco-editor
     class="my-code-editor"
