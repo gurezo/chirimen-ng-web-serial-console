@@ -3,13 +3,13 @@ import { ButtonComponent } from '../../components';
 import { DialogService } from '../../service/dialog/dialog.service';
 
 @Component({
-  selector: 'app-example-frame',
+  selector: 'app-example',
   standalone: true,
   imports: [ButtonComponent],
-  templateUrl: './example-frame.component.html',
-  styleUrl: './example-frame.component.scss',
+  templateUrl: './example.component.html',
+  styleUrl: './example.component.scss',
 })
-export class ExampleFrameComponent {
+export class ExampleComponent {
   private service = inject(DialogService);
 
   closeModal(): void {
