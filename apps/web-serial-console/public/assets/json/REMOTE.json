@@ -1,58 +1,42 @@
 [
-    {
-        "ID": "remote_gpio_led",
-        "タイトル": "リモートLチカ",
-        "概要": "GPIO PORT26に繋いだLEDをブラウザからOn/Off",
-        "回路図JS GET": "",
-        "CHIRIMEN ORIG参考リンク": ""
-    },
-    {
-        "ID": "remote_sht30",
-        "タイトル": "リモート温湿度センサ",
-        "概要": "I2CのSHT30で測った温度と湿度をブラウザで表示",
-        "回路図JS GET": "",
-        "CHIRIMEN ORIG参考リンク": ""
-    },
-    {
-        "ID": "remote_pca9685",
-        "タイトル": "リモートサーボ",
-        "概要": "I2CのPCA9685 Port0のサーボをブラウザでコントロール",
-        "回路図JS GET": "",
-        "CHIRIMEN ORIG参考リンク": ""
-    },
-    {
-        "ID": "remote_hbridge_pca9685",
-        "タイトル": "リモートモーター正転・逆転・速度制御",
-        "概要": "IH-BridgeモータドライバとPWMドライバPCA9685でDCモータの正逆転速度をブラウザでコントロール",
-        "回路図JS GET": "",
-        "CHIRIMEN ORIG参考リンク": ""
-    },
-    {
-        "ID": "remote_gpio_sw",
-        "タイトル": "リモートオンオフセンサ",
-        "概要": "GPIO PORT5に繋いだスイッチ(On/Offセンサ)をブラウザでモニタ",
-        "回路図JS GET": "",
-        "CHIRIMEN ORIG参考リンク": ""
-    },
-    {
-        "ID": "remote_vl53l0x",
-        "タイトル": "リモート距離センサ",
-        "概要": "I2CのVL53L0Xで測った距離をブラウザで表示（インターバル表示）",
-        "回路図JS GET": "",
-        "CHIRIMEN ORIG参考リンク": ""
-    },
-    {
-        "ID": "remote_sht30_gpioin",
-        "タイトル": "リモート温湿度センサ+GPIO",
-        "概要": "GPIOのスイッチをトリガにしてI2CのSHT30で測った温度と湿度をブラウザで表示",
-        "回路図JS GET": "",
-        "CHIRIMEN ORIG参考リンク": ""
-    },
-    {
-        "ID": "remote_camera",
-        "タイトル": "リモートカメラ",
-        "概要": "PiZero専用カメラでリモート撮影",
-        "回路図JS GET": "",
-        "CHIRIMEN ORIG参考リンク": ""
-    }
+  {
+    "ID": "remote_gpio_led",
+    "title": "リモートLチカ",
+    "overview": "GPIO PORT26に繋いだLEDをブラウザからOn/Off"
+  },
+  {
+    "ID": "remote_sht30",
+    "title": "リモート温湿度センサ",
+    "overview": "I2CのSHT30で測った温度と湿度をブラウザで表示"
+  },
+  {
+    "ID": "remote_pca9685",
+    "title": "リモートサーボ",
+    "overview": "I2CのPCA9685 Port0のサーボをブラウザでコントロール"
+  },
+  {
+    "ID": "remote_hbridge_pca9685",
+    "title": "リモートモーター正転・逆転・速度制御",
+    "overview": "IH-BridgeモータドライバとPWMドライバPCA9685でDCモータの正逆転速度をブラウザでコントロール"
+  },
+  {
+    "ID": "remote_gpio_sw",
+    "title": "リモートオンオフセンサ",
+    "overview": "GPIO PORT5に繋いだスイッチ(On/Offセンサ)をブラウザでモニタ"
+  },
+  {
+    "ID": "remote_vl53l0x",
+    "title": "リモート距離センサ",
+    "overview": "I2CのVL53L0Xで測った距離をブラウザで表示（インターバル表示）"
+  },
+  {
+    "ID": "remote_sht30_gpioin",
+    "title": "リモート温湿度センサ+GPIO",
+    "overview": "GPIOのスイッチをトリガにしてI2CのSHT30で測った温度と湿度をブラウザで表示"
+  },
+  {
+    "ID": "remote_camera",
+    "title": "リモートカメラ",
+    "overview": "PiZero専用カメラでリモート撮影"
+  }
 ]
