@@ -1,41 +1,41 @@
 [
   {
-    "ID": "remote_gpio_led",
+    "id": "remote_gpio_led",
     "title": "リモートLチカ",
     "overview": "GPIO PORT26に繋いだLEDをブラウザからOn/Off"
   },
   {
-    "ID": "remote_sht30",
+    "id": "remote_sht30",
     "title": "リモート温湿度センサ",
     "overview": "I2CのSHT30で測った温度と湿度をブラウザで表示"
   },
   {
-    "ID": "remote_pca9685",
+    "id": "remote_pca9685",
     "title": "リモートサーボ",
     "overview": "I2CのPCA9685 Port0のサーボをブラウザでコントロール"
   },
   {
-    "ID": "remote_hbridge_pca9685",
+    "id": "remote_hbridge_pca9685",
     "title": "リモートモーター正転・逆転・速度制御",
     "overview": "IH-BridgeモータドライバとPWMドライバPCA9685でDCモータの正逆転速度をブラウザでコントロール"
   },
   {
-    "ID": "remote_gpio_sw",
+    "id": "remote_gpio_sw",
     "title": "リモートオンオフセンサ",
     "overview": "GPIO PORT5に繋いだスイッチ(On/Offセンサ)をブラウザでモニタ"
   },
   {
-    "ID": "remote_vl53l0x",
+    "id": "remote_vl53l0x",
     "title": "リモート距離センサ",
     "overview": "I2CのVL53L0Xで測った距離をブラウザで表示（インターバル表示）"
   },
   {
-    "ID": "remote_sht30_gpioin",
+    "id": "remote_sht30_gpioin",
     "title": "リモート温湿度センサ+GPIO",
     "overview": "GPIOのスイッチをトリガにしてI2CのSHT30で測った温度と湿度をブラウザで表示"
   },
   {
-    "ID": "remote_camera",
+    "id": "remote_camera",
     "title": "リモートカメラ",
     "overview": "PiZero専用カメラでリモート撮影"
   }
