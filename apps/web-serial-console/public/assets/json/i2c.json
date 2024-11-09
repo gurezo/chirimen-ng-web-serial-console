@@ -122,7 +122,7 @@
   {
     "id": "neopixel-i2c",
     "title": "NEOPIXEL LED",
-    "overview": "<a href=\"https://learn.adafruit.com/adafruit-neopixel-uberguide/the-magic-of-neopixels\">Neopixel LED</a> (シンプルな配線の多数のLEDの発光を個々に制御できるフルカラーLED)をATTINY85をI2Cコントローラにして使用します。ATTINY85には<a href=\"https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/tips.md\">ここで紹介されているファームウェア</a>を焼いておく必要があります。簡単に組み立てられるようにしたオープンソースハードの<a href=\"https://github.com/chirimen-oh/accessories/blob/master/others/neopixel_i2c_TH/\">専用コントローラボード</a>もあります。"
+    "overview": "Neopixel LED(シンプルな配線の多数のLEDの発光を個々に制御できるフルカラーLED)をATTINY85をI2Cコントローラにして使用します。ATTINY85にはファームウェアを焼いておく必要があります。簡単に組み立てられるようにしたオープンソースハードの専用コントローラボードもあります。"
   },
   {
     "id": "paj7620",
