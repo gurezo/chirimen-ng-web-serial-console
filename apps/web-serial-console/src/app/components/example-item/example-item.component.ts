@@ -20,6 +20,6 @@ export class ExampleItemComponent {
     'overview',
     'js',
     'circuit',
-    'link',
+    // 'link',
   ];
 }
