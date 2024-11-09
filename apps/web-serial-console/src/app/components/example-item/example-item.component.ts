@@ -12,6 +12,7 @@ import { ExampleItem } from '../../models';
   styleUrl: './example-item.component.scss',
 })
 export class ExampleItemComponent {
+  @Input() label!: string;
   @Input() exampleItem!: ExampleItem[];
   displayedColumns: string[] = [
     'id',
