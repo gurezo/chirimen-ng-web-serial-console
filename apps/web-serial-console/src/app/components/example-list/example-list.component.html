@@ -1,22 +1,16 @@
-<div>
+<div class="example-wrapper">
   <div>
     <h2>GPIO</h2>
-    @for (example of gpioExample; track example.id) {
-      <app-example-item [exampleItem]="example" />
-    }
+    <app-example-item [exampleItem]="gpioExample" />
   </div>
 
   <div>
     <h2>I2C</h2>
-    @for (example of i2cExample; track example.id) {
-      <app-example-item [exampleItem]="example" />
-    }
+    <app-example-item [exampleItem]="i2cExample" />
   </div>
 
   <div>
     <h2>Remote</h2>
-    @for (example of remoteExample; track example.id) {
-      <app-example-item [exampleItem]="example" />
-    }
+    <app-example-item [exampleItem]="remoteExample" />
   </div>
 </div>
