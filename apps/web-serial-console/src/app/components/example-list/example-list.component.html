@@ -1,3 +1,22 @@
-@for (example of examples; track $index) {
-  <app-example-item />
-}
+<div>
+  <div>
+    <h2>GPIO</h2>
+    @for (example of gpioExample; track example.id) {
+      <app-example-item [exampleItem]="example" />
+    }
+  </div>
+
+  <div>
+    <h2>I2C</h2>
+    @for (example of i2cExample; track example.id) {
+      <app-example-item [exampleItem]="example" />
+    }
+  </div>
+
+  <div>
+    <h2>Remote</h2>
+    @for (example of remoteExample; track example.id) {
+      <app-example-item [exampleItem]="example" />
+    }
+  </div>
+</div>

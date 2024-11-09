@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { ExampleItem } from '../../models';
 
 @Component({
   selector: 'app-example-item',
@@ -8,4 +9,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './example-item.component.html',
   styleUrl: './example-item.component.scss',
 })
-export class ExampleItemComponent {}
+export class ExampleItemComponent {
+  @Input() exampleItem!: ExampleItem;
+}
