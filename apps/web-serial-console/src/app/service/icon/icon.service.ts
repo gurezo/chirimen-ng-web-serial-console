@@ -46,5 +46,9 @@ export class IconService {
       'file_open',
       this.domSanitizer.bypassSecurityTrustResourceUrl('/file_open.png'),
     );
+    this.matIconRegistry.addSvgIcon(
+      'schema',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/schema.png'),
+    );
   }
 }

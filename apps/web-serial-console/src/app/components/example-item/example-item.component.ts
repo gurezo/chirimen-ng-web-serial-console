@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { ExampleItem } from '../../models';
 
 @Component({
   selector: 'app-example-item',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatIconModule, MatTableModule, MatTooltipModule],
   templateUrl: './example-item.component.html',
   styleUrl: './example-item.component.scss',
 })
