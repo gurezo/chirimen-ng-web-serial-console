@@ -12,4 +12,15 @@ export class ExampleService {
   getJsonArray(path: string): Observable<Array<ExampleJson>> {
     return this.http.get<Array<ExampleJson>>(path);
   }
+
+  downloadMainJs(exampleName: string): Observable<Blob> {
+    return this.http.get(
+      'https://tutorial.chirimen.org/pizero/esm-examples/' +
+        exampleName +
+        'main.js',
+      {
+        responseType: 'blob',
+      },
+    );
+  }
 }
