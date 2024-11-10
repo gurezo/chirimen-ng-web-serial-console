@@ -1,5 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { tap } from 'rxjs';
 import { WebSerialService } from '../../service';
 import { WebSerialActions } from '../actions/web-serial.actions';
 
@@ -11,6 +12,7 @@ export class WebSerialEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(WebSerialActions.init),
+      tap(() => console.log('init')),
       // TODO: ここでシリアルポートのリクエストを行う
       //  exhaustMap(() => from(this.service.requestPort()).pipe(
       //   map(() => of())

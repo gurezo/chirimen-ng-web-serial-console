@@ -10,6 +10,7 @@ import { provideMonacoEditor } from 'ngx-monaco-editor-v2';
 import { routes } from './app.routes';
 import { monacoConfig } from './constants';
 import {
+  WebSerialEffects,
   webSerialFeatureKey,
   webSerialReducer,
   xtermFeatureKey,
@@ -27,6 +28,7 @@ export const appConfig: ApplicationConfig = {
       [webSerialFeatureKey]: webSerialReducer,
       [xtermFeatureKey]: xtermReducer,
     }),
+    provideEffects([WebSerialEffects]),
     provideStoreDevtools({
       maxAge: 25,
       connectInZone: true,
@@ -35,6 +37,6 @@ export const appConfig: ApplicationConfig = {
       traceLimit: 75,
     }),
     provideRouterStore(),
-    provideEffects(),
+    // provideEffects(),
   ],
 };

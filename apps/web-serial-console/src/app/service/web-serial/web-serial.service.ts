@@ -73,6 +73,7 @@
 // }
 
 import { computed, Injectable, signal } from '@angular/core';
+import { SerialPort } from 'web-serial-polyfill';
 
 @Injectable({
   providedIn: 'root',
