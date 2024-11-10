@@ -1,8 +1,6 @@
 <div class="wrapper">
   <h2>ファイルをアップロード</h2>
-  <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
-    <input type="file" (change)="onFileSelected($event)" />
-
+  <form [formGroup]="uploadForm" (ngSubmit)="fileInput.click()">
     <div class="button-area">
       <app-button [label]="'アップロード'" type="button" />
       <app-button
@@ -13,3 +11,4 @@
     </div>
   </form>
 </div>
+<input #fileInput type="file" (change)="onFileSelected($event)" />
