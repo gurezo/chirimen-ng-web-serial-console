@@ -14,6 +14,11 @@ export class ExampleService {
   }
 
   downloadMainJs(exampleName: string): Observable<Blob> {
+    // memo
+    // eligrey / FileSaver.js を使うか後で判断
+    // https://github.com/eligrey/FileSaver.js
+    // https://zenn.dev/daiki_21/scraps/ff4ee44566b24a
+
     return this.http.get(
       'https://tutorial.chirimen.org/pizero/esm-examples/' +
         exampleName +
