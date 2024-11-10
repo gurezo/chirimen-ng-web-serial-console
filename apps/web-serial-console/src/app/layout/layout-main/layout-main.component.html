@@ -36,8 +36,16 @@
 } @else {
   <div class="serial-connect">
     <h2>
-      Web Serial Connect ボタンをクリックして、Web Serail を接続して下さい
+      Raspberry Pi Zero と PC を USB で繋いだ後、Connect
+      ボタンをクリックして、Web Serail を接続して下さい
     </h2>
-    <app-button [label]="label" (clickEvent)="onClick()" />
+    <img
+      ngSrc="PiZeroW_OTG.jpg"
+      width="680"
+      height="270"
+      priority
+      alt="PiZeroW_OTG"
+    />
+    <app-button [label]="'Web Serial Connect'" (clickEvent)="onClick()" />
   </div>
 }

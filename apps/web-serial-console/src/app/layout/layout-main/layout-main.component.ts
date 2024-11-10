@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,14 +21,15 @@ import { WebSerialActions } from '../../store';
   selector: 'app-layout-main',
   standalone: true,
   imports: [
-    HeaderComponent,
     BreadcombComponent,
     ButtonComponent,
     ConsoleComponent,
     EditorComponent,
+    HeaderComponent,
     MatDividerModule,
     MatIconModule,
     MatTabsModule,
+    NgOptimizedImage,
     PinAssignComponent,
     RouterOutlet,
     TreeComponent,
@@ -39,8 +41,7 @@ export default class LayoutMainComponent {
   store = inject(Store);
   service = inject(WebSerialService);
 
-  label = 'Web Serial Connect';
-  isSerialConnected = true;
+  isSerialConnected = false;
 
   ngOnInit() {
     this.store.dispatch(WebSerialActions.init());
