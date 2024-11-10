@@ -16,6 +16,7 @@
       [cdkTreeNodeTypeaheadLabel]="node.raw.name"
       [isExpandable]="node.isExpandable()"
       (expandedChange)="onExpand(node, $event)"
+      [cdkContextMenuTriggerFor]="context_menu"
     >
       <!-- Spinner when node is loading children; this replaces the expand button. -->
       @if (node.areChildrenLoading()) {
@@ -47,3 +48,11 @@
 <!-- Copyright 2024 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
     can be found in the LICENSE file at https://angular.io/license -->
+
+<ng-template #context_menu>
+  <div class="example-menu" cdkMenu>
+    <button class="example-menu-item" cdkMenuItem>Show</button>
+    <button class="example-menu-item" cdkMenuItem>Edit</button>
+    <button class="example-menu-item" cdkMenuItem>delete</button>
+  </div>
+</ng-template>

@@ -1,3 +1,4 @@
+import { CdkContextMenuTrigger, CdkMenu, CdkMenuItem } from '@angular/cdk/menu';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
@@ -275,6 +276,9 @@ class ComplexDataStore {
   selector: 'app-tree',
   standalone: true,
   imports: [
+    CdkContextMenuTrigger,
+    CdkMenu,
+    CdkMenuItem,
     CdkTreeModule,
     CommonModule,
     MatButtonModule,
