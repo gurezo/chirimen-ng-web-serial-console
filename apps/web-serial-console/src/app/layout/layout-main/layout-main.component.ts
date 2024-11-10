@@ -10,10 +10,7 @@ import {
   PinAssignComponent,
   TreeComponent,
 } from '../../components';
-import {
-  ConsoleContainersComponent,
-  EditorContainersComponent,
-} from '../../containers';
+import { HeaderComponent } from '../../components/header/header.component';
 import ConsoleComponent from '../../pages/console/console.component';
 import EditorComponent from '../../pages/editor/editor.component';
 import { WebSerialService } from '../../service';
@@ -23,12 +20,11 @@ import { WebSerialActions } from '../../store';
   selector: 'app-layout-main',
   standalone: true,
   imports: [
+    HeaderComponent,
     BreadcombComponent,
     ButtonComponent,
     ConsoleComponent,
-    ConsoleContainersComponent,
     EditorComponent,
-    EditorContainersComponent,
     MatDividerModule,
     MatIconModule,
     MatTabsModule,
