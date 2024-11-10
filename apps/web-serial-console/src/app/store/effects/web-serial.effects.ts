@@ -25,4 +25,22 @@ export class WebSerialEffects {
       // })
     ),
   );
+
+  isConnect$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(WebSerialActions.isConnected),
+      // TODO: ここでシリアルポートのリクエストを行う
+      //  exhaustMap(() => from(this.service.requestPort()).pipe(
+      //   map(() => of())
+      // ))),
+      // map(() => from(this.service.requestPort())),
+      //  { dispatch: false },
+      // switchMap(() => {
+      //   return this.service.requestPort().then(
+      //     () => {},
+      //     error((error) => console.error(error))
+      //   );
+      // })
+    ),
+  );
 }
