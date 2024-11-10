@@ -3,7 +3,6 @@ import { Component, inject } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
-import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import {
   BreadcombComponent,
@@ -31,7 +30,6 @@ import { WebSerialActions } from '../../store';
     MatTabsModule,
     NgOptimizedImage,
     PinAssignComponent,
-    RouterOutlet,
     TreeComponent,
   ],
   templateUrl: './layout-main.component.html',
