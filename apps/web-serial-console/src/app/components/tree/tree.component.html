@@ -51,8 +51,17 @@
 
 <ng-template #context_menu>
   <div class="example-menu" cdkMenu>
-    <button class="example-menu-item" cdkMenuItem>Show</button>
-    <button class="example-menu-item" cdkMenuItem>Edit</button>
-    <button class="example-menu-item" cdkMenuItem>delete</button>
+    <button class="example-menu-item" cdkMenuItem>
+      <mat-icon>open_in_browser</mat-icon>
+      Show
+    </button>
+    <button class="example-menu-item" cdkMenuItem>
+      <mat-icon>edit</mat-icon>
+      Edit
+    </button>
+    <button class="example-menu-item" cdkMenuItem>
+      <mat-icon>delete_sweep</mat-icon>
+      delete
+    </button>
   </div>
 </ng-template>

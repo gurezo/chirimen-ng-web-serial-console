@@ -11,9 +11,6 @@ import { MatMenuModule } from '@angular/material/menu';
   styleUrl: './editor-tool-bar.component.scss',
 })
 export class EditorToolBarComponent {
-  @Output() eventOpenFile = new EventEmitter<void>();
   @Output() eventSaveFile = new EventEmitter<void>();
-  @Output() eventCreateFile = new EventEmitter<void>();
-  @Output() eventDeleteFile = new EventEmitter<void>();
-  @Output() eventRenameFile = new EventEmitter<void>();
+  @Output() eventFormatFile = new EventEmitter<void>();
 }

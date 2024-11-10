@@ -50,5 +50,9 @@ export class IconService {
       'schema',
       this.domSanitizer.bypassSecurityTrustResourceUrl('/schema.png'),
     );
+    this.matIconRegistry.addSvgIcon(
+      'segment',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('/segment.png'),
+    );
   }
 }

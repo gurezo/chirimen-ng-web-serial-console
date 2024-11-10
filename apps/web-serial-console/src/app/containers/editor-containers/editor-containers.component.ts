@@ -44,9 +44,6 @@ export class EditorContainersComponent implements OnInit {
     // console.log(line);
   }
 
-  openFile(): void {}
   saveFile(): void {}
-  createFile(): void {}
-  deleteFile(): void {}
-  renameFile(): void {}
+  formatFile(): void {}
 }

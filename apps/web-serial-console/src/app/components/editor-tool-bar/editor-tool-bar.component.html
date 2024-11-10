@@ -1,23 +1,11 @@
 <div class="editor-bar">
-  <button mat-menu-item (click)="eventOpenFile.emit()">
-    <mat-icon>file_open</mat-icon>
-    <span>open file</span>
-  </button>
   <button mat-menu-item (click)="eventSaveFile.emit()">
-    <mat-icon>save</mat-icon>
+    <mat-icon>save_alt</mat-icon>
     <span>save file</span>
   </button>
-  <button mat-menu-item (click)="eventCreateFile.emit()">
-    <mat-icon>create</mat-icon>
-    <span>new file</span>
-  </button>
-  <button mat-menu-item (click)="eventDeleteFile.emit()">
-    <mat-icon>delete_sweep</mat-icon>
-    <span>delete file</span>
-  </button>
-  <button mat-menu-item (click)="eventRenameFile.emit()">
-    <mat-icon>save_as</mat-icon>
-    <span>rename fille</span>
+  <button mat-menu-item (click)="eventFormatFile.emit()">
+    <mat-icon>segment</mat-icon>
+    <span>JavaScript Format</span>
   </button>
 </div>
 <mat-divider />
