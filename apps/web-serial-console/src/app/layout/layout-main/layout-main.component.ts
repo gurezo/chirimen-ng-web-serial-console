@@ -42,10 +42,10 @@ export default class LayoutMainComponent {
   isSerialConnected = false;
 
   ngOnInit() {
-    // this.store.dispatch(WebSerialActions.init());
+    this.store.dispatch(WebSerialActions.init());
   }
 
   onClick() {
-    this.store.dispatch(WebSerialActions.init());
+    this.store.dispatch(WebSerialActions.onConnect());
   }
 }
