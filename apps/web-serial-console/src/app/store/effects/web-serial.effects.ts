@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { switchMap } from 'rxjs';
+import { from, map, switchMap } from 'rxjs';
 import { WebSerialService } from '../../service';
 import { WebSerialActions } from '../actions/web-serial.actions';
 
@@ -18,10 +18,15 @@ export class WebSerialEffects {
     this.actions$.pipe(
       ofType(WebSerialActions.onConnect),
       switchMap(() =>
-        this.service
-          .requestPort()
-          .then(() => WebSerialActions.onConnectSuccess({ isConnected: true }))
-          .catch(() => WebSerialActions.onConnectFail({ isConnected: false })),
+        from(this.service.requestPort()).pipe(
+          map((result) => {
+            if (result === 'success') {
+              return WebSerialActions.onConnectSuccess({ isConnected: true });
+            } else {
+              return WebSerialActions.onConnectFail({ isConnected: false });
+            }
+          }),
+        ),
       ),
     ),
   );

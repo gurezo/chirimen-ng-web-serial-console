@@ -4,6 +4,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Store } from '@ngrx/store';
+import { tap } from 'rxjs';
 import {
   BreadcombComponent,
   ButtonComponent,
@@ -14,7 +15,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import ConsoleComponent from '../../pages/console/console.component';
 import EditorComponent from '../../pages/editor/editor.component';
 import { WebSerialService } from '../../service';
-import { WebSerialActions } from '../../store';
+import { selectIsConnect, WebSerialActions } from '../../store';
 
 @Component({
   selector: 'app-layout-main',
@@ -40,6 +41,12 @@ export default class LayoutMainComponent {
   service = inject(WebSerialService);
 
   isSerialConnected = false;
+
+  connected$ = this.store.select(selectIsConnect).pipe(
+    tap(() => {
+      console.log('connected');
+    }),
+  );
 
   ngOnInit() {
     this.store.dispatch(WebSerialActions.init());

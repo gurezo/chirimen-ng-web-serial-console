@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import { SerialPort } from 'web-serial-polyfill';
+import { SerialPort } from 'web-serial-polyfill';
 
 @Injectable({
   providedIn: 'root',
@@ -21,14 +21,17 @@ export class WebSerialService {
     }
   }
 
-  async requestPort(): Promise<SerialPort | null> {
+  // async requestPort(): Promise<SerialPort | null> {
+  async requestPort(): Promise<string> {
     try {
-      const serialPort = await navigator.serial.requestPort();
-      await serialPort.open({ baudRate: 115200 });
-      console.log('this.serialPort', serialPort);
-      return serialPort;
+      // const serialPort = await navigator.serial.requestPort();
+      // await serialPort.open({ baudRate: 115200 });
+      // console.log('this.serialPort', serialPort);
+      // return serialPort;
+      return 'success';
     } catch (error) {
-      return null;
+      return 'fail';
+      // return null;
     }
   }
 
@@ -62,9 +65,10 @@ export class WebSerialService {
     }
   }
 
-  async closePort(serialPort: SerialPort): Promise<boolean> {
+  // async closePort(serialPort: SerialPort): Promise<boolean> {
+  async closePort(): Promise<boolean> {
     try {
-      serialPort?.close();
+      return true;
     } catch (error) {
       console.error(error);
     } finally {
