@@ -1,138 +1,83 @@
 import { Injectable } from '@angular/core';
+import { catchError, from, map, Observable, throwError } from 'rxjs';
 import { SerialPort } from 'web-serial-polyfill';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WebSerialService {
-  // TODO: シリアルポートの状態管理をどうするか
-  // NgRx のルートストアに登録するか、サービス内で管理するか
-  // serialPort: SerialPort | undefined = undefined;
-  encoder = new TextEncoder();
-  lang: string = 'en';
+  private port: SerialPort | null = null;
 
-  constructor() {
-    this.init();
-  }
-
-  init() {
-    if (navigator.language == 'ja') {
-      this.lang = navigator.language;
-    }
-  }
-
-  // async requestPort(): Promise<SerialPort | null> {
-  async requestPort(): Promise<string> {
+  async connect(): Promise<boolean> {
     try {
-      // const serialPort = await navigator.serial.requestPort();
-      // await serialPort.open({ baudRate: 115200 });
-      // console.log('this.serialPort', serialPort);
-      // return serialPort;
-      return 'success';
-    } catch (error) {
-      return 'fail';
-      // return null;
-    }
-  }
-
-  portWrite(serialPort: SerialPort, data: any): boolean {
-    if (!serialPort) {
-      return false;
-    }
-
-    try {
-      const writer = serialPort?.writable?.getWriter();
-      writer?.write(this.encoder.encode(data));
-      writer?.releaseLock();
+      // this.port = await navigator.serial.requestPort();
+      // await this.port.open({ baudRate: 115200 });
+      const serialPort = await navigator.serial.requestPort();
+      await serialPort.open({ baudRate: 115200 });
       return true;
     } catch (error) {
-      console.error(error);
+      console.error('Error connecting to serial port:', error);
       return false;
     }
   }
 
-  portRead(serialPort: SerialPort) {
-    if (!serialPort) {
-      return false;
+  sendData(data: string): Observable<void> {
+    if (!this.port) {
+      return throwError(() => new Error('Serial port not connected'));
     }
 
-    try {
-      const reader = serialPort?.readable?.getReader();
-      return true;
-    } catch (error) {
-      console.error(error);
-      return false;
+    const encoder = new TextEncoder();
+    const writer = this.port.writable?.getWriter();
+    if (!writer) {
+      return throwError(() => new Error('Serial port not connected'));
     }
+
+    return from(writer.write(encoder.encode(data))).pipe(
+      map(() => {
+        writer.releaseLock();
+      }),
+      catchError((error) => {
+        console.error('Error sending data:', error);
+        writer.releaseLock();
+        return throwError(() => error);
+      }),
+    );
   }
 
-  // async closePort(serialPort: SerialPort): Promise<boolean> {
-  async closePort(): Promise<boolean> {
-    try {
-      return true;
-    } catch (error) {
-      console.error(error);
-    } finally {
-      return true;
+  readData(): Observable<string> {
+    if (!this.port) {
+      return throwError(() => new Error('Serial port not connected'));
     }
+
+    const reader = this.port.readable?.getReader();
+    const decoder = new TextDecoder();
+    if (!reader) {
+      return throwError(() => new Error('Serial port not connected'));
+    }
+
+    return new Observable<string>((observer) => {
+      const readChunk = () => {
+        reader
+          .read()
+          .then(({ value, done }) => {
+            if (done) {
+              observer.complete();
+              return;
+            }
+            const chunk = decoder.decode(value);
+            observer.next(chunk);
+            readChunk();
+          })
+          .catch((error) => {
+            observer.error(error);
+          });
+      };
+
+      readChunk();
+
+      return () => {
+        reader.releaseLock();
+      };
+    });
   }
 }
-
-// import { computed, Injectable, signal } from '@angular/core';
-// import { SerialPort } from 'web-serial-polyfill';
-
-// @Injectable({
-//   providedIn: 'root',
-// })
-// export class WebSerialService {
-//   private port: SerialPort | undefined;
-//   private reader: ReadableStreamDefaultReader<Uint8Array> | undefined;
-
-//   private dataSignal = signal<any>(null);
-//   private connectedSignal = signal<Event | null>(null);
-//   private disconnectedSignal = signal<Event | null>(null);
-
-//   public data = computed(() => this.dataSignal());
-//   public connected = computed(() => this.connectedSignal());
-//   public disconnected = computed(() => this.disconnectedSignal());
-
-//   constructor() {
-//     if (!('serial' in navigator)) {
-//       console.error('WebSerial is not supported in this browser');
-//       return;
-//     }
-
-//     navigator.serial.addEventListener('connect', this.serialConnect.bind(this));
-//     navigator.serial.addEventListener(
-//       'disconnect',
-//       this.serialDisconnect.bind(this),
-//     );
-//   }
-
-//   async openPort(thisPort: SerialPort): Promise<void> {
-//     // Implementation for opening the port
-//   }
-
-//   async closePort(): Promise<void> {
-//     // Implementation for closing the port
-//   }
-
-//   async sendSerial(data: string | ArrayBuffer): Promise<void> {
-//     // Implementation for sending serial data
-//   }
-
-//   async listenForSerial(): Promise<void> {
-//     // Implementation for listening to serial data
-//     // When data is received:
-//     // this.dataSignal.set(receivedData);
-//   }
-
-//   private serialConnect(event: Event): void {
-//     console.log('Serial device connected', event);
-//     this.connectedSignal.set(event);
-//   }
-
-//   private serialDisconnect(event: Event): void {
-//     console.log('Serial device disconnected', event);
-//     this.disconnectedSignal.set(event);
-//   }
-// }

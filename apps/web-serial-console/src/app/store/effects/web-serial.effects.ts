@@ -18,14 +18,12 @@ export class WebSerialEffects {
     this.actions$.pipe(
       ofType(WebSerialActions.onConnect),
       switchMap(() =>
-        from(this.service.requestPort()).pipe(
-          map((result) => {
-            if (result === 'success') {
-              return WebSerialActions.onConnectSuccess({ isConnected: true });
-            } else {
-              return WebSerialActions.onConnectFail({ isConnected: false });
-            }
-          }),
+        from(this.service.connect()).pipe(
+          map((isConnected) =>
+            isConnected
+              ? WebSerialActions.onConnectSuccess({ isConnected })
+              : WebSerialActions.onConnectFail({ isConnected }),
+          ),
         ),
       ),
     ),
