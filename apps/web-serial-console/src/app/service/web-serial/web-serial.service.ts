@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { catchError, from, map, Observable, throwError } from 'rxjs';
-import { SerialPort } from 'web-serial-polyfill';
+import { SerialPort as SerialPortPolyfill } from 'web-serial-polyfill';
 
 interface SerialPortInfo {
   usbVendorId: number;
@@ -17,11 +17,9 @@ const RASPBERRY_PI_ZERO_INFO: SerialPortInfo = {
   providedIn: 'root',
 })
 export class WebSerialService {
-  // @ts-ignore
-  private port: SerialPort | null = null;
-  // private nav = navigator as Navigator & { serial: Serial };
+  private port: SerialPort | SerialPortPolyfill | undefined;
 
-  async isRaspberryPiZero(port: any) {
+  async isRaspberryPiZero(port: SerialPort) {
     const info = await port.getInfo();
     return (
       info.usbVendorId === RASPBERRY_PI_ZERO_INFO.usbVendorId &&
@@ -31,14 +29,11 @@ export class WebSerialService {
 
   async connect(): Promise<boolean> {
     try {
-      // this.port = await navigator.serial.requestPort();
-      // // this.port = await this.nav.serial.requestPort();
-      // await this.port.open({ baudRate: 115200 });
-      const serialPort = await navigator.serial.requestPort();
-      await serialPort.open({ baudRate: 115200 });
+      this.port = await navigator.serial.requestPort();
+      await this.port.open({ baudRate: 115200 });
 
       // 選択されたポートが Raspberry Pi Zero かどうかを判定
-      const isPiZero = await this.isRaspberryPiZero(serialPort);
+      const isPiZero = await this.isRaspberryPiZero(this.port);
 
       if (isPiZero) {
         console.log('接続されたデバイスは Raspberry Pi Zero です。');
