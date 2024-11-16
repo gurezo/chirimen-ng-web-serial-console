@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { catchError, from, map, Observable, throwError } from 'rxjs';
 import { SerialPort as SerialPortPolyfill } from 'web-serial-polyfill';
 import {
+  WEB_SERIAL_ERROR_PORT_ALERADY_CONNECTED,
+  WEB_SERIAL_ERROR_PORT_NO_SELECTED,
+  WEB_SERIAL_ERROR_UNKNOWN,
   WEB_SERIAL_IS_NOT_RASPBEYY_PI_ZERO,
   WEB_SERIAL_OPEN_SUCCESS,
-  WEB_SERIAL_PORT_NO_SELECTED,
 } from '../../constants';
 import { isRaspberryPiZero } from '../../functions';
 
@@ -35,8 +37,23 @@ export class WebSerialService {
         return WEB_SERIAL_IS_NOT_RASPBEYY_PI_ZERO;
       }
     } catch (error) {
-      console.error('Error connecting to serial port:', error);
-      return WEB_SERIAL_PORT_NO_SELECTED;
+      if (error instanceof DOMException) {
+        console.log(error.message);
+        switch (error.message) {
+          case WEB_SERIAL_ERROR_PORT_NO_SELECTED:
+            alert('NG!!! ポートが選択されていません。');
+            return WEB_SERIAL_ERROR_PORT_NO_SELECTED;
+          case WEB_SERIAL_ERROR_PORT_ALERADY_CONNECTED:
+            alert('NG!!! Raspberry Pi Zero が接続されたままです。');
+            return WEB_SERIAL_ERROR_PORT_ALERADY_CONNECTED;
+          default:
+            alert('NG!!! 原因不明のエラーです。');
+            return WEB_SERIAL_ERROR_UNKNOWN;
+        }
+      } else {
+        alert('NG!!! 原因不明のエラーです。');
+        return WEB_SERIAL_ERROR_UNKNOWN;
+      }
     }
   }
 
