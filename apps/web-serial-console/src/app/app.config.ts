@@ -7,6 +7,7 @@ import { provideRouterStore } from '@ngrx/router-store';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideMonacoEditor } from 'ngx-monaco-editor-v2';
+import { provideToastr } from 'ngx-toastr';
 import { routes } from './app.routes';
 import { monacoConfig } from './constants';
 import {
@@ -22,6 +23,11 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),
+    provideToastr({
+      timeOut: 2000,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    }),
     provideHttpClient(),
     provideMonacoEditor(monacoConfig),
     provideStore({
@@ -37,6 +43,5 @@ export const appConfig: ApplicationConfig = {
       traceLimit: 75,
     }),
     provideRouterStore(),
-    // provideEffects(),
   ],
 };
