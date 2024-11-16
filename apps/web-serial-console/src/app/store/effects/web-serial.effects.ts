@@ -36,7 +36,11 @@ export class WebSerialEffects {
   );
 
   disConnect$ = createEffect(
-    () => this.actions$.pipe(ofType(WebSerialActions.onDisConnect)),
+    () =>
+      this.actions$.pipe(
+        ofType(WebSerialActions.onDisConnect),
+        switchMap(() => from(this.service.disConnect())),
+      ),
     { dispatch: false },
   );
 }

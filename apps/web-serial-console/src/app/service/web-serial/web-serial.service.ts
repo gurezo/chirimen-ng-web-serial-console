@@ -55,6 +55,12 @@ export class WebSerialService {
     }
   }
 
+  async disConnect() {
+    try {
+      await this.port?.close();
+    } catch (error) {}
+  }
+
   sendData(data: string): Observable<void> {
     if (!this.port) {
       return throwError(() => new Error('Serial port not connected'));
