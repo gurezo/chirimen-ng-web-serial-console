@@ -37,23 +37,26 @@ export class WebSerialService {
         return WEB_SERIAL_IS_NOT_RASPBEYY_PI_ZERO;
       }
     } catch (error) {
-      if (error instanceof DOMException) {
-        console.log(error.message);
-        switch (error.message) {
-          case WEB_SERIAL_ERROR_PORT_NO_SELECTED:
-            alert('NG!!! ポートが選択されていません。');
-            return WEB_SERIAL_ERROR_PORT_NO_SELECTED;
-          case WEB_SERIAL_ERROR_PORT_ALERADY_CONNECTED:
-            alert('NG!!! Raspberry Pi Zero が接続されたままです。');
-            return WEB_SERIAL_ERROR_PORT_ALERADY_CONNECTED;
-          default:
-            alert('NG!!! 原因不明のエラーです。');
-            return WEB_SERIAL_ERROR_UNKNOWN;
-        }
-      } else {
-        alert('NG!!! 原因不明のエラーです。');
-        return WEB_SERIAL_ERROR_UNKNOWN;
+      return this.connectError(error);
+    }
+  }
+
+  connectError(error: unknown): string {
+    if (error instanceof DOMException) {
+      switch (error.message) {
+        case WEB_SERIAL_ERROR_PORT_NO_SELECTED:
+          alert('NG!!! ポートが選択されていません。');
+          return WEB_SERIAL_ERROR_PORT_NO_SELECTED;
+        case WEB_SERIAL_ERROR_PORT_ALERADY_CONNECTED:
+          alert('NG!!! Raspberry Pi Zero が接続されたままです。');
+          return WEB_SERIAL_ERROR_PORT_ALERADY_CONNECTED;
+        default:
+          alert('NG!!! 原因不明のエラーです。');
+          return WEB_SERIAL_ERROR_UNKNOWN;
       }
+    } else {
+      alert('NG!!! 原因不明のエラーです。');
+      return WEB_SERIAL_ERROR_UNKNOWN;
     }
   }
 
