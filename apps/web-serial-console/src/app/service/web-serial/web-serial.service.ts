@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { catchError, from, map, Observable, throwError } from 'rxjs';
 import { SerialPort as SerialPortPolyfill } from 'web-serial-polyfill';
+import {
+  WEB_SERIAL_IS_NOT_RASPBEYY_PI_ZERO,
+  WEB_SERIAL_OPEN_SUCCESS,
+  WEB_SERIAL_PORT_NO_SELECTED,
+} from '../../constants';
+import { isRaspberryPiZero } from '../../functions';
 
 interface SerialPortInfo {
   usbVendorId: number;
   usbProductId: number;
 }
-
-// Raspberry Pi Zero の USB ベンダーIDとプロダクトID (例)
-const RASPBERRY_PI_ZERO_INFO: SerialPortInfo = {
-  usbVendorId: 0x1d6b,
-  usbProductId: 0x0601,
-};
 
 @Injectable({
   providedIn: 'root',
@@ -19,36 +19,26 @@ const RASPBERRY_PI_ZERO_INFO: SerialPortInfo = {
 export class WebSerialService {
   private port: SerialPort | SerialPortPolyfill | undefined;
 
-  async isRaspberryPiZero(port: SerialPort) {
-    const info = await port.getInfo();
-    return (
-      info.usbVendorId === RASPBERRY_PI_ZERO_INFO.usbVendorId &&
-      info.usbProductId === RASPBERRY_PI_ZERO_INFO.usbProductId
-    );
-  }
-
-  async connect(): Promise<boolean> {
+  async connect(): Promise<string> {
     try {
       this.port = await navigator.serial.requestPort();
       await this.port.open({ baudRate: 115200 });
 
       // 選択されたポートが Raspberry Pi Zero かどうかを判定
-      const isPiZero = await this.isRaspberryPiZero(this.port);
+      const isPiZero = await isRaspberryPiZero(this.port);
 
       if (isPiZero) {
         console.log('接続されたデバイスは Raspberry Pi Zero です。');
         alert('OK!!! 接続されたデバイスは Raspberry Pi Zero です。');
-        return true;
+        return WEB_SERIAL_OPEN_SUCCESS;
       } else {
         console.log('接続されたデバイスは Raspberry Pi Zero ではありません。');
         alert('NG!!! 接続されたデバイスは Raspberry Pi Zero ではありません。');
-        return false;
+        return WEB_SERIAL_IS_NOT_RASPBEYY_PI_ZERO;
       }
-
-      return true;
     } catch (error) {
       console.error('Error connecting to serial port:', error);
-      return false;
+      return WEB_SERIAL_PORT_NO_SELECTED;
     }
   }
 
