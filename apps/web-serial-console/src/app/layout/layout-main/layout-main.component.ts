@@ -48,7 +48,11 @@ export default class LayoutMainComponent {
     this.store.dispatch(WebSerialActions.init());
   }
 
-  onClick() {
+  onConnect() {
     this.store.dispatch(WebSerialActions.onConnect());
+  }
+
+  onDisConnect() {
+    this.store.dispatch(WebSerialActions.onDisConnect());
   }
 }

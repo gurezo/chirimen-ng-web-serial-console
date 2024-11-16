@@ -1,4 +1,8 @@
-<app-header [connected$]="connected$" />
+<app-header
+  [connected$]="connected$"
+  (eventConnect)="onConnect()"
+  (eventDisConnect)="onDisConnect()"
+/>
 @if (connected$ | async; as connected) {
   <div class="wrapper">
     <div class="box1">
@@ -46,6 +50,6 @@
       priority
       alt="PiZeroW_OTG"
     />
-    <app-button [label]="'Web Serial Connect'" (clickEvent)="onClick()" />
+    <app-button [label]="'Web Serial Connect'" (clickEvent)="onConnect()" />
   </div>
 }
