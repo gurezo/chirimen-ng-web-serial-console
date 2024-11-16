@@ -10,11 +10,6 @@ import {
 } from '../../constants';
 import { isRaspberryPiZero } from '../../functions';
 
-interface SerialPortInfo {
-  usbVendorId: number;
-  usbProductId: number;
-}
-
 @Injectable({
   providedIn: 'root',
 })
