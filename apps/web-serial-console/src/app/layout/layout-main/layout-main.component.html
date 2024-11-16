@@ -1,5 +1,5 @@
-<app-header />
-@if (isSerialConnected) {
+<app-header [connected$]="connected$" />
+@if (connected$ | async; as connected) {
   <div class="wrapper">
     <div class="box1">
       <!-- パンくず -->

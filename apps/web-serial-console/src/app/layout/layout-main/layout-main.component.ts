@@ -1,10 +1,9 @@
-import { NgOptimizedImage } from '@angular/common';
+import { AsyncPipe, NgOptimizedImage } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Store } from '@ngrx/store';
-import { tap } from 'rxjs';
 import {
   BreadcombComponent,
   ButtonComponent,
@@ -15,12 +14,13 @@ import { HeaderComponent } from '../../components/header/header.component';
 import ConsoleComponent from '../../pages/console/console.component';
 import EditorComponent from '../../pages/editor/editor.component';
 import { WebSerialService } from '../../service';
-import { selectIsConnect, WebSerialActions } from '../../store';
+import { WebSerialActions } from '../../store';
 
 @Component({
   selector: 'app-layout-main',
   standalone: true,
   imports: [
+    AsyncPipe,
     BreadcombComponent,
     ButtonComponent,
     ConsoleComponent,
@@ -42,14 +42,25 @@ export default class LayoutMainComponent {
 
   isSerialConnected = false;
 
-  connected$ = this.store.select(selectIsConnect).pipe(
-    tap(() => {
-      console.log('connected');
-    }),
-  );
+  connected$ = this.store.select((state) => state.webSerial.isConnected);
+  // connected$ = this.store
+  //   .select((state) => state.webSerial.isConnected)
+  //   .pipe(
+  //     tap((isConnected) => {
+  //       console.log('isConnected state:', isConnected);
+  //     }),
+  //   );
 
   ngOnInit() {
+    this.connected$.subscribe((isConnected) => {
+      console.log('Subscription value:', isConnected);
+    });
+
     this.store.dispatch(WebSerialActions.init());
+
+    this.store.subscribe((state) => {
+      console.log('Store state:', state);
+    });
   }
 
   onClick() {

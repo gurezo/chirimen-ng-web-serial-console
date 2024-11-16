@@ -1,9 +1,10 @@
 import { createSelector } from '@ngrx/store';
 import { WebSerialState } from '../models';
 
-export const selectWebSerialFeature = (state: WebSerialState) => state;
+export const selectWebSerialFeature = (state: { webSerial: WebSerialState }) =>
+  state.webSerial;
 
-export const selectIsConnect = createSelector(
+export const isConnected = createSelector(
   selectWebSerialFeature,
   (state: WebSerialState) => state.isConnected,
 );
