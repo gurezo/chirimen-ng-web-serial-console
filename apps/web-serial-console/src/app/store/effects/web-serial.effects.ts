@@ -23,10 +23,10 @@ export class WebSerialEffects {
         from(this.service.connect()).pipe(
           map((connectedResult) => {
             if (connectedResult === WEB_SERIAL_OPEN_SUCCESS) {
-              this.toastMessage.success();
+              this.toastMessage.webSerailSuccess();
               return WebSerialActions.onConnectSuccess({ isConnected: true });
             } else {
-              this.toastMessage.error(connectedResult);
+              this.toastMessage.webSerailError(connectedResult);
               return WebSerialActions.onConnectFail({ isConnected: false });
             }
           }),

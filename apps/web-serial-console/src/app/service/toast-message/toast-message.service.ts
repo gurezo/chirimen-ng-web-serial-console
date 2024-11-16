@@ -12,15 +12,26 @@ import {
 export class ToastMessageService {
   toastr = inject(ToastrService);
 
-  success(): void {
-    this.toastr.success(
-      '接続されたデバイスは Raspberry Pi Zero です。',
+  success(title: string, message: string): void {
+    this.toastr.success(message, title);
+  }
+
+  error(title: string, message: string): void {
+    this.toastr.error(message, title);
+  }
+
+  webSerailSuccess(): void {
+    this.success(
+      'Raspberry Pi Zero に正常接続されました。',
       'Web Serial Open Success',
     );
   }
-  error(connectedResult: string): void {
-    const errorMessage = this.createErrorMessages(connectedResult);
-    this.toastr.error(errorMessage, 'Web Serial Open Fail');
+
+  webSerailError(connectedResult: string): void {
+    this.toastr.error(
+      this.createErrorMessages(connectedResult),
+      'Web Serial Open Fail',
+    );
   }
 
   createErrorMessages(connectedResult: string): string {
