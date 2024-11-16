@@ -28,11 +28,9 @@ export class WebSerialService {
       const isPiZero = await isRaspberryPiZero(this.port);
 
       if (isPiZero) {
-        console.log('接続されたデバイスは Raspberry Pi Zero です。');
         alert('OK!!! 接続されたデバイスは Raspberry Pi Zero です。');
         return WEB_SERIAL_OPEN_SUCCESS;
       } else {
-        console.log('接続されたデバイスは Raspberry Pi Zero ではありません。');
         alert('NG!!! 接続されたデバイスは Raspberry Pi Zero ではありません。');
         return WEB_SERIAL_IS_NOT_RASPBEYY_PI_ZERO;
       }

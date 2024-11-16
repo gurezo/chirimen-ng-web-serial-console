@@ -43,24 +43,9 @@ export default class LayoutMainComponent {
   isSerialConnected = false;
 
   connected$ = this.store.select((state) => state.webSerial.isConnected);
-  // connected$ = this.store
-  //   .select((state) => state.webSerial.isConnected)
-  //   .pipe(
-  //     tap((isConnected) => {
-  //       console.log('isConnected state:', isConnected);
-  //     }),
-  //   );
 
   ngOnInit() {
-    this.connected$.subscribe((isConnected) => {
-      console.log('Subscription value:', isConnected);
-    });
-
     this.store.dispatch(WebSerialActions.init());
-
-    this.store.subscribe((state) => {
-      console.log('Store state:', state);
-    });
   }
 
   onClick() {
