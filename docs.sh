@@ -26,7 +26,7 @@ mkdir docs
 echo "dashboard deploy code move"
 echo ""
 
-mv -f dist/dashboard/browser docs
+mv -f dist/dashboard/browser/* docs
 
 echo "git add"
 echo ""
