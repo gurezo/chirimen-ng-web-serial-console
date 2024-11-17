@@ -112,7 +112,7 @@ export class ConsoleContainersComponent implements AfterViewInit {
 
     await sleep(3000);
     this.xterminal.writeln('pi@raspberrypi:~$ pw');
-    this.xterminal.writeln('/home/p');
+    this.xterminal.writeln('/home/pi');
     this.xterminal.writeln(' ');
 
     await sleep(1000);
