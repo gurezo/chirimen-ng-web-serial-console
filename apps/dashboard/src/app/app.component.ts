@@ -10,7 +10,7 @@ import { IconService } from './service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  title = 'chirimen-ng-web-serial-console';
+  title = 'dashboard';
   iconService = inject(IconService);
 
   ngOnInit(): void {

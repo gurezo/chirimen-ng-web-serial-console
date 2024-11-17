@@ -1,6 +1,6 @@
 import type { Config } from 'jest';
 
-const esmPackages = ['@angular/apps/web-serial-console', '@testing-library/angular'];
+const esmPackages = ['@angular/apps/dashboard', '@testing-library/angular'];
 
 const config: Config = {
   preset: 'jest-preset-angular',

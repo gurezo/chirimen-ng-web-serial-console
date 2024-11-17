@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "chirimen-ng-web-serial-console re-install"
+echo "dashboard re-install"
 echo ""
 
 echo "remove node_modules, package-lock.json, .angular"

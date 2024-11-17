@@ -1,8 +1,8 @@
 {
-  "name": "apps-web-serial-console",
+  "name": "apps-dashboard",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/web-serial-console/src",
+  "sourceRoot": "apps/dashboard/src",
   "prefix": "app",
   "generators": {
     "@schematics/angular:component": {
@@ -13,16 +13,16 @@
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "options": {
-        "outputPath": "dist/chirimen-ng-web-serial-console",
-        "index": "apps/web-serial-console/src/index.html",
-        "browser": "apps/web-serial-console/src/main.ts",
+        "outputPath": "dist/dashboard",
+        "index": "apps/dashboard/src/index.html",
+        "browser": "apps/dashboard/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/web-serial-console/tsconfig.app.json",
+        "tsConfig": "apps/dashboard/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/web-serial-console/public"
+            "input": "apps/dashboard/public"
           },
           {
             "glob": "**/*",
@@ -31,7 +31,7 @@
           },
           {
             "glob": "**/*",
-            "input": "apps/web-serial-console/public/assets/json",
+            "input": "apps/dashboard/public/assets/json",
             "output": "/assets/json/"
           }
         ],
@@ -39,7 +39,7 @@
           "@angular/material/prebuilt-themes/rose-red.css",
           "@xterm/xterm/css/xterm.css",
           "node_modules/ngx-toastr/toastr.css",
-          "apps/web-serial-console/src/styles.scss"
+          "apps/dashboard/src/styles.scss"
         ],
         "scripts": ["node_modules/@xterm/xterm/lib/xterm.js"]
       },
@@ -71,10 +71,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "apps-web-serial-console:build:production"
+          "buildTarget": "apps-dashboard:build:production"
         },
         "development": {
-          "buildTarget": "apps-web-serial-console:build:development"
+          "buildTarget": "apps-dashboard:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -86,8 +86,8 @@
       "executor": "@angular-builders/jest:run",
       "options": {
         "polyfills": ["zone.js", "zone.js/testing"],
-        "tsConfig": "apps/web-serial-console/tsconfig.spec.json",
-        "configPath": "apps/web-serial-console/jest.config.ts"
+        "tsConfig": "apps/dashboard/tsconfig.spec.json",
+        "configPath": "apps/dashboard/jest.config.ts"
       }
     }
   }

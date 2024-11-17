@@ -13,8 +13,8 @@
     "skipLibCheck": true,
     "baseUrl": "src",
     "paths": {
-      "@app/*": ["apps/web-serial-console/src/app/*"],
-      "@shared/*": ["apps/web-serial-console/src/app/shared/*"]
+      "@app/*": ["apps/dashboard/src/app/*"],
+      "@shared/*": ["apps/dashboard/src/app/shared/*"]
     }
   }
 }
