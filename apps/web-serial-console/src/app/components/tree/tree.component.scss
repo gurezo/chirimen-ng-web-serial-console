@@ -39,3 +39,11 @@ cdk-tree-node {
 .example-menu-item:active {
   background-color: rgb(170, 170, 170);
 }
+
+.parent-only {
+  padding-left: 16px;
+}
+
+.parent-only:hover {
+  background-color: rgb(240, 240, 240);
+}
