@@ -46,4 +46,4 @@ git push origin gh-pages -f
 echo "branch change main"
 echo ""
 
-git checkout gh-pages
+git checkout main
