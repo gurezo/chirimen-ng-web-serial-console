@@ -24,6 +24,7 @@ export class FileUploadComponent {
     if (file) {
       this.uploadForm.patchValue({ file });
     }
+    this.closeModal();
   }
 
   onSubmit(): void {
