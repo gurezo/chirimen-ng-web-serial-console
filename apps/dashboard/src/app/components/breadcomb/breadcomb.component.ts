@@ -1,17 +1,22 @@
-import { NgFor } from '@angular/common';
+// import { NgFor } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
+// import { MatIconModule } from '@angular/material/icon';
+// import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-breadcomb',
   standalone: true,
-  imports: [MatToolbarModule, MatIconModule, MatDividerModule, NgFor],
+  // imports: [MatToolbarModule, MatIconModule, MatDividerModule, NgFor],
+  imports: [MatDividerModule, NgClass],
   templateUrl: './breadcomb.component.html',
   styleUrl: './breadcomb.component.scss',
 })
 export class BreadcombComponent implements OnInit {
+  // for demo
+  styleFlag = false;
+
   appitems = [
     {
       label: 'Item 1',
@@ -76,8 +81,9 @@ export class BreadcombComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.appitemsTravel = this.appitems;
-    this.appitemsTravel = this.appitems[3].items;
+    // this.appitemsTravel = this.appitems;
+    // this.appitemsTravel = this.appitems[3].items;
+    setInterval(() => (this.styleFlag = !this.styleFlag), 2000);
   }
 
   menuHeader: any = [];
