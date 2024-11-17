@@ -6,6 +6,11 @@ echo ""
 
 git checkout gh-pages
 
+echo "branch rebase main"
+echo ""
+
+git rebase main
+
 echo "dashboard build"
 echo ""
 
