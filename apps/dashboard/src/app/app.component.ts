@@ -10,7 +10,7 @@ import { IconService } from './service';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  title = 'dashboard';
+  title = 'CHIRIMEN Lite DashBoard';
   iconService = inject(IconService);
 
   ngOnInit(): void {
