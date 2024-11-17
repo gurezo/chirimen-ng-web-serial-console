@@ -2,8 +2,7 @@ div {
   margin-top: 8px;
 }
 
-.my-code-editor {
-  .editor-container {
-    height: calc(100vh - 100px);
-  }
+ngx-monaco-editor {
+  height: calc(80vh - 100px);
+  width: 100%;
 }
