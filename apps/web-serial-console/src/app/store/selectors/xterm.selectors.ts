@@ -1,19 +1,23 @@
 import { createSelector } from '@ngrx/store';
-import { XTermState } from '../models';
+import { XtermState } from '../models';
 
-export const selectXTermFeature = (state: XTermState) => state;
+export const xtermFeatureKey = 'xterm';
 
-export const selectWriteData = createSelector(
+export const selectXTermFeature = (state: { xterm: XtermState }) => state.xterm;
+
+export const selectInput = createSelector(
   selectXTermFeature,
-  (state: XTermState) => state.wirteData
+  (state) => state.input,
 );
-
-export const selectReadData = createSelector(
+export const selectOutput = createSelector(
   selectXTermFeature,
-  (state: XTermState) => state.readData
+  (state) => state.output,
 );
-
-export const selectCurrentDirectory = createSelector(
+export const selectConnectionStatus = createSelector(
   selectXTermFeature,
-  (state: XTermState) => state.currentDirectory
+  (state) => state.connected,
+);
+export const selectError = createSelector(
+  selectXTermFeature,
+  (state) => state.error,
 );

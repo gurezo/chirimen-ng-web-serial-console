@@ -3,9 +3,11 @@ import { createActionGroup, emptyProps, props } from '@ngrx/store';
 export const XTermActions = createActionGroup({
   source: '[XTerm]',
   events: {
-    init: emptyProps(),
-    currentDirectory: props<{ currentDirectory: string }>(),
-    read: props<{ readData: string }>(),
-    write: props<{ wirteData: string }>(),
+    initializeTerminal: emptyProps(),
+    readFromTerminal: props<{ data: string }>(),
+    writeToTerminal: props<{ data: string }>(),
+    clearTerminal: emptyProps(),
+    setConnected: props<{ connected: boolean }>(),
+    setError: props<{ error: unknown | null }>(),
   },
 });

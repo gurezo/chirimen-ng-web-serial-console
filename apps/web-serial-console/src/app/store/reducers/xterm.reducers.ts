@@ -1,37 +1,28 @@
 import { createReducer, on } from '@ngrx/store';
-import { XTermActions } from '../actions/xterm.actions';
-import { XTermState } from '../models';
-
-export const initialXTermState: XTermState = {
-  /**
-   * TODO: new Terminal() を定義すると下記ワーニング発生する
-   * ▲ [WARNING] bundle initial exceeded maximum budget. Budget 1.05 MB was not met by 39.78 kB with a total of 1.09 MB.
-   * ▲ [WARNING] Module '@xterm/xterm' used by 'src/app/shared/store/reducers/xterm.reducers.ts' is not ESM
-   * 暫定で、null で初期化しておく
-   */
-  terminal: null,
-  wirteData: '',
-  readData: '',
-  currentDirectory: '',
-};
-
-export const xtermFeatureKey = 'xterm';
+import { XTermActions } from '../actions';
+import { initialXtermState } from '../models';
 
 export const xtermReducer = createReducer(
-  initialXTermState,
-  on(XTermActions.init, (state) => ({
+  initialXtermState,
+  on(XTermActions.initializeTerminal, () => initialXtermState),
+  on(XTermActions.readFromTerminal, (state, { data }) => ({
     ...state,
+    input: state.input + data,
   })),
-  on(XTermActions.write, (state, { wirteData }) => ({
+  on(XTermActions.writeToTerminal, (state, { data }) => ({
     ...state,
-    wirteData,
+    output: state.output + data,
   })),
-  on(XTermActions.read, (state, { readData }) => ({
+  on(XTermActions.clearTerminal, (state) => ({
     ...state,
-    readData,
+    output: '',
   })),
-  on(XTermActions.currentDirectory, (state, { currentDirectory }) => ({
+  on(XTermActions.setConnected, (state, { connected }) => ({
     ...state,
-    currentDirectory,
+    connected,
+  })),
+  on(XTermActions.setError, (state, { error }) => ({
+    ...state,
+    error,
   })),
 );
